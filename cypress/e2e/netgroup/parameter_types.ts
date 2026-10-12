@@ -1,12 +1,7 @@
 import { defineParameterType } from "@badeball/cypress-cucumber-preprocessor";
 
 export type NetgroupMemberType =
-  | "user"
-  | "group"
-  | "host"
-  | "hostgroup"
-  | "netgroup"
-  | "externalhost";
+  "user" | "group" | "host" | "hostgroup" | "netgroup" | "externalhost";
 
 const netgroupMemberTypes: NetgroupMemberType[] = [
   "user",

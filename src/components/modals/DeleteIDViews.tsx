@@ -174,7 +174,7 @@ const DeleteIDViewsModal = (props: PropsToDeleteViews) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: JSX.Element[] = [
+  const modalActionsDelete: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-delete"
       key="delete-id-views"
@@ -198,7 +198,7 @@ const DeleteIDViewsModal = (props: PropsToDeleteViews) => {
     </Button>,
   ];
 
-  const modalDelete: JSX.Element = (
+  const modalDelete: React.JSX.Element = (
     <>
       <ModalWithFormLayout
         dataCy="delete-id-views-modal"

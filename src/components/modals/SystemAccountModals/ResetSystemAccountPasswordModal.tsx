@@ -136,7 +136,7 @@ const ResetSystemAccountPasswordModal = (
       });
   };
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="reset-password-sysaccount"
       variant="primary"

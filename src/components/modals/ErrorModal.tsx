@@ -13,7 +13,7 @@ interface PropsToErrorModal {
   title: string;
   isOpen: boolean;
   onClose: () => void;
-  actions: JSX.Element[];
+  actions: React.JSX.Element[];
   errorMessage: string;
 }
 

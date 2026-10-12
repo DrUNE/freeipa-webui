@@ -12,9 +12,7 @@ import type { HostGroupsMembersTab } from "./parameter_types";
 type MemberType = "member_host" | "member_hostgroup";
 
 type MemberOfType =
-  | "memberof_netgroup"
-  | "memberof_hbacrule"
-  | "memberof_sudorule";
+  "memberof_netgroup" | "memberof_hbacrule" | "memberof_sudorule";
 
 const MEMBERS_TAB_COUNT_MAP = {
   host: "host-groups-tab-member-host-count",

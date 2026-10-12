@@ -2,8 +2,7 @@ import { ErrorRPCResponse, ValidResponse } from "src/services/rpc";
 import { TRANSLATIONS } from "./InternationalizationKeys";
 
 export type InternalizationResponse =
-  | ErrorRPCResponse
-  | ValidResponse<Translations>;
+  ErrorRPCResponse | ValidResponse<Translations>;
 
 export type Translations = {
   [K in TranslationKey]: string;

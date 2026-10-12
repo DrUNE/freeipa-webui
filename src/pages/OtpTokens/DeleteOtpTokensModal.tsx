@@ -167,7 +167,7 @@ const DeleteOtpTokensModal = (props: DeleteOtpTokensModalProps) => {
   ];
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: JSX.Element[] = [
+  const modalActionsDelete: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-ok"
       key="delete-otp-tokens"

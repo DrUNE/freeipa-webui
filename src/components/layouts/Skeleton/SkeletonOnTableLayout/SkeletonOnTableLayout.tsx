@@ -20,7 +20,7 @@ interface PropsToSkeletonTable {
 const SkeletonOnTableLayout = (propsToSkeletonTable: PropsToSkeletonTable) => {
   // Generating rows to JSX
   const prepareRows = () => {
-    const rows: JSX.Element[] = [];
+    const rows: React.JSX.Element[] = [];
 
     for (let i = 0; i < propsToSkeletonTable.rows; i++) {
       rows.push(

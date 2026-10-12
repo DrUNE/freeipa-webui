@@ -138,8 +138,7 @@ const HostsSettings = (props: PropsToHostsSettings) => {
     executeUnprovisionHost(host).then((result) => {
       if ("data" in result) {
         const disableError = result.data?.error as
-          | FetchBaseQueryError
-          | SerializedError;
+          FetchBaseQueryError | SerializedError;
 
         if (disableError) {
           // alert: error
@@ -190,8 +189,7 @@ const HostsSettings = (props: PropsToHostsSettings) => {
     executeAutoMemberRebuild([props.host]).then((result) => {
       if ("data" in result) {
         const automemberError = result.data?.error as
-          | FetchBaseQueryError
-          | SerializedError;
+          FetchBaseQueryError | SerializedError;
 
         if (automemberError) {
           // alert: error
@@ -225,7 +223,7 @@ const HostsSettings = (props: PropsToHostsSettings) => {
     });
   };
 
-  const membershipModalActions: JSX.Element[] = [
+  const membershipModalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-ok"
       key="rebuild-auto-membership"

@@ -268,7 +268,7 @@ const DisableEnableSudoRules = (props: PropsToDisableEnableRules) => {
   };
 
   // Set the Modal and Action buttons for 'Disable' option
-  const modalActionsDisable: JSX.Element[] = [
+  const modalActionsDisable: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-disable"
       key="disable-sudorules"
@@ -288,7 +288,7 @@ const DisableEnableSudoRules = (props: PropsToDisableEnableRules) => {
     </Button>,
   ];
 
-  const modalDisable: JSX.Element = (
+  const modalDisable: React.JSX.Element = (
     <ModalWithFormLayout
       dataCy="disable-enable-sudo-rules-modal"
       variantType="medium"
@@ -310,7 +310,7 @@ const DisableEnableSudoRules = (props: PropsToDisableEnableRules) => {
   );
 
   // Set the Modal and Action buttons for 'Enable' option
-  const modalActionsEnable: JSX.Element[] = [
+  const modalActionsEnable: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-enable"
       key="enable-sudorules"
@@ -330,7 +330,7 @@ const DisableEnableSudoRules = (props: PropsToDisableEnableRules) => {
     </Button>,
   ];
 
-  const modalEnable: JSX.Element = (
+  const modalEnable: React.JSX.Element = (
     <ModalWithFormLayout
       dataCy="disable-enable-sudo-rules-modal"
       variantType="medium"

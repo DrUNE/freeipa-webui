@@ -119,8 +119,7 @@ const AddModal = (props: PropsToAddModal) => {
       if ("data" in result) {
         const data = result.data?.result;
         const error = result.data?.error as
-          | FetchBaseQueryError
-          | SerializedError;
+          FetchBaseQueryError | SerializedError;
 
         if (error) {
           dispatch(
@@ -184,7 +183,7 @@ const AddModal = (props: PropsToAddModal) => {
   ];
 
   // Actions
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

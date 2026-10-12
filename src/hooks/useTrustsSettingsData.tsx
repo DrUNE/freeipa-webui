@@ -1,4 +1,4 @@
-/* eslint-disable @eslint-react/hooks-extra/no-direct-set-state-in-use-effect */
+/* eslint-disable @eslint-react/set-state-in-effect */
 import React from "react";
 // RPC
 import { useGetObjectMetadataQuery } from "src/services/rpc";

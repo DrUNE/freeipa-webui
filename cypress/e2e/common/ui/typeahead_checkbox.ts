@@ -58,7 +58,8 @@ export const createTypeaheadCheckboxOption = (
   dataCy: string
 ) => {
   openTypeaheadCheckboxMenu(dataCy);
-  typeaheadCheckboxInput(dataCy).clear().type(option);
+  typeaheadCheckboxInput(dataCy).clear();
+  typeaheadCheckboxInput(dataCy).type(option);
   cy.dataCy(`${dataCy}-create-new-option`).should("be.visible").click();
   closeTypeaheadCheckboxMenu(dataCy);
 };

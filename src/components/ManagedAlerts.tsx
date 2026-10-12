@@ -18,7 +18,7 @@ import { useAppSelector } from "src/store/hooks";
 const ManagedAlerts = () => {
   const alerts = useAppSelector((state) => state.alerts);
 
-  const toAlertElements = (alerts: AlertInfo[]): JSX.Element[] => {
+  const toAlertElements = (alerts: AlertInfo[]): React.JSX.Element[] => {
     return alerts.map((alert) => (
       <Alert
         key={alert.name}

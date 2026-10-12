@@ -72,7 +72,7 @@ const EnableDisableDnsForwardZonesModal = (
     props.onClose();
   };
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy={"modal-button-" + props.operation}
       key={props.operation + "-dnsforwardzones"}

@@ -40,11 +40,7 @@ export interface PrincipalAliasMultiTextBoxProps {
   metadata: Metadata;
   onRefresh: () => void;
   from:
-    | "active-users"
-    | "stage-users"
-    | "preserved-users"
-    | "hosts"
-    | "services";
+    "active-users" | "stage-users" | "preserved-users" | "hosts" | "services";
 }
 
 const getPrincipalAliasMutations = (from: string) => {

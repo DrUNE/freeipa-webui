@@ -121,7 +121,7 @@ const AddRoleModal = (props: PropsToAddModal) => {
   ];
 
   // Actions
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

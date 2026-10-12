@@ -141,7 +141,7 @@ const AddSelinuxUserMapModal = (props: PropsToAddSelinuxUserMapModal) => {
     },
   ];
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-add"
       key="add-new-selinux-user-map"

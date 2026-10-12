@@ -115,7 +115,7 @@ export const TypeAheadWithCheckbox = <T,>({
 
     // This sucks, but we're forced to, due to how isOpenCallback
     // works, with memo the we onOpenChange is fired
-    // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
+    // eslint-disable-next-line @eslint-react/set-state-in-effect
     setAvailableOptions(newSelectOptions);
     // We mutate options, if we don't, we end up with the same issue as above...
   }, [inputValue, localOptions]);

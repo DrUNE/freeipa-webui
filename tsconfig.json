@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "rootDir": ".",
     "outDir": "dist",
     "target": "ES2015",
@@ -23,6 +22,8 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "paths": {
+      "src/*": ["./src/*"],
+      "cypress/support/*": ["./cypress/support/*"],
       "@badeball/cypress-cucumber-preprocessor/*": [
         "./node_modules/@badeball/cypress-cucumber-preprocessor/dist/subpath-entrypoints/*"
       ]

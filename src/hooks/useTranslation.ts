@@ -17,8 +17,7 @@ const getNestedProperty = (
   // We know that the server response must be a string,
   // otherwise something is wrong with the server
   return key.split(".").reduce((o, k) => o && o[k], i18n) as unknown as
-    | string
-    | undefined;
+    string | undefined;
 };
 
 export const useTranslation = () => {

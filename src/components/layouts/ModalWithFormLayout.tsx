@@ -31,7 +31,7 @@ interface PropsToModal {
   // onSubmit method
   onSubmit?: (event: React.FormEvent) => void;
   // Action buttons
-  actions: JSX.Element[];
+  actions: React.JSX.Element[];
   // is horizontal
   isHorizontal?: boolean;
 }
@@ -42,9 +42,9 @@ export interface Field {
   // Name as it should be shown in the form ("Form name")
   name?: string;
   // JSX code that would include the PF component
-  pfComponent: JSX.Element;
+  pfComponent: React.JSX.Element;
   // Label icon. Can include custom classes
-  labelIcon?: JSX.Element;
+  labelIcon?: React.JSX.Element;
   // Is this field required
   fieldRequired?: boolean;
 }

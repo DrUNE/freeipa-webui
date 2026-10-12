@@ -97,10 +97,18 @@ const AddIDOverrideUserModal = (props: PropsToAddUser) => {
   }, [props.show, props.users]);
 
   // Refs
-  const loginRef = useRef() as MutableRefObject<HTMLInputElement>;
-  const gecosRef = useRef() as MutableRefObject<HTMLInputElement>;
-  const shellRef = useRef() as MutableRefObject<HTMLInputElement>;
-  const homedirRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const loginRef = useRef<HTMLInputElement>(
+    null
+  ) as MutableRefObject<HTMLInputElement>;
+  const gecosRef = useRef<HTMLInputElement>(
+    null
+  ) as MutableRefObject<HTMLInputElement>;
+  const shellRef = useRef<HTMLInputElement>(
+    null
+  ) as MutableRefObject<HTMLInputElement>;
+  const homedirRef = useRef<HTMLInputElement>(
+    null
+  ) as MutableRefObject<HTMLInputElement>;
 
   // List of fields
   const fields = [

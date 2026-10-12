@@ -22,12 +22,7 @@ export interface IPAParamDefinitionSelect extends IPAParamDefinition {
   id?: string;
   setIpaObject?: (ipaObject: Record<string, unknown>) => void;
   variant?:
-    | "default"
-    | "plain"
-    | "primary"
-    | "plainText"
-    | "secondary"
-    | "typeahead";
+    "default" | "plain" | "primary" | "plainText" | "secondary" | "typeahead";
   options: string[];
   ariaLabelledBy?: string;
   defaultValue?: string; // Custom default value (otherwise, NO_SELECTION_OPTION will be used)

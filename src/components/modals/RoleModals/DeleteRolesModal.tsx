@@ -137,7 +137,7 @@ const DeleteRolesModal = (props: DeleteRolesModalProps) => {
   };
 
   // Modal actions
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="delete-roles"
       variant="danger"

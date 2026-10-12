@@ -16,7 +16,7 @@ interface PropsToConfModal {
   title: string;
   isOpen?: boolean;
   onClose: () => void;
-  actions: JSX.Element[];
+  actions: React.JSX.Element[];
   messageText: string;
   messageObj: string;
   formId?: string;

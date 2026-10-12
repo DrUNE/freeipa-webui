@@ -73,7 +73,7 @@ const RebuildAutoMembership = (props: PropsToRebuildAutoMembership) => {
   };
 
   // Actions
-  const membershipModalActions: JSX.Element[] = [
+  const membershipModalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-ok"
       key="rebuild-auto-membership"

@@ -173,7 +173,7 @@ const DeleteDnsForwardZonesModal = (props: DeleteDnsForwardZonesModalProps) => {
     },
   ];
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-delete"
       key="delete-dnsforwardzones"

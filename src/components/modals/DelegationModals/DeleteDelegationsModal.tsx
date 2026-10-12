@@ -156,7 +156,7 @@ const DeleteDelegationsModal = (props: DeleteDelegationsModalProps) => {
       });
   };
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="delete-delegations"
       variant="danger"

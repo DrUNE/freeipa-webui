@@ -108,7 +108,7 @@ const ActivateStageUsers = (props: PropsToActivateUsers) => {
   };
 
   // Set the Modal and Action buttons for 'Stage' option
-  const modalStageActions: JSX.Element[] = [
+  const modalStageActions: React.JSX.Element[] = [
     <Button
       key="stage-users"
       variant="primary"

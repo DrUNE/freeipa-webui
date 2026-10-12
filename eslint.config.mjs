@@ -73,6 +73,12 @@ export default defineConfig([
       "cypress/no-unnecessary-waiting": "error",
       // Temporarily set as warn, so we can refactor when needed
       "@eslint-react/no-nested-component-definitions": "warn",
+      "@eslint-react/rules-of-hooks": "warn",
+      // Temporarily disabled: enabled by default since @eslint-react v5
+      "@eslint-react/exhaustive-deps": "off",
+      "@eslint-react/use-state": "off",
+      "@eslint-react/purity": "off",
+      "@eslint-react/naming-convention-ref-name": "off",
     },
   },
 ]);

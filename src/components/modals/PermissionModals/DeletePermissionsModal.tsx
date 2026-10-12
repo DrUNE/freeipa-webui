@@ -142,7 +142,7 @@ const DeletePermissionsModal = (props: DeletePermissionsModalProps) => {
   };
 
   // Modal actions
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="delete-permissions"
       variant="danger"

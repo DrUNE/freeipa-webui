@@ -63,7 +63,7 @@ const DeleteRuleModal = (props: DeleteRuleModalProps) => {
     props.onClose();
   };
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-ok"
       variant="danger"

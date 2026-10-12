@@ -19,7 +19,7 @@ interface PropsToPKModal {
   onChange: (value: string) => void;
   isOpen: boolean;
   onClose: () => void;
-  actions: JSX.Element[];
+  actions: React.JSX.Element[];
   title: string;
   subtitle?: string;
   isRequired?: boolean | false;

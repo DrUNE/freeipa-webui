@@ -21,8 +21,7 @@ export interface CheckboxOption {
   text: string;
 }
 
-export interface IPAParamDefinitionCheckboxListWithFilter
-  extends IPAParamDefinition {
+export interface IPAParamDefinitionCheckboxListWithFilter extends IPAParamDefinition {
   dataCy: string;
   options: CheckboxOption[];
   maxHeight?: string;

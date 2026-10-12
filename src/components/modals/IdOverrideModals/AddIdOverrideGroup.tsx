@@ -91,7 +91,9 @@ const AddIDOverrideGroupModal = (props: PropsToAddGroup) => {
   }, [props.show, props.groups]);
 
   // Refs
-  const loginRef = useRef() as MutableRefObject<HTMLInputElement>;
+  const loginRef = useRef<HTMLInputElement>(
+    null
+  ) as MutableRefObject<HTMLInputElement>;
 
   // List of fields
   const fields = [

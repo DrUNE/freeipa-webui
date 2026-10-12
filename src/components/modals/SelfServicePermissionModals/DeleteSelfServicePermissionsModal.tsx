@@ -138,7 +138,7 @@ const DeleteSelfServicePermissionsModal = (
       });
   };
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="delete-self-service-permissions"
       variant="danger"

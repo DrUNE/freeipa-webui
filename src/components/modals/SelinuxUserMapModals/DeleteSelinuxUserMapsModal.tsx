@@ -119,7 +119,7 @@ const DeleteSelinuxUserMapsModal = (props: DeleteSelinuxUserMapsModalProps) => {
     },
   ];
 
-  const modalActionsDelete: JSX.Element[] = [
+  const modalActionsDelete: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-ok"
       key="delete-selinux-user-maps"

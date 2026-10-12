@@ -191,7 +191,7 @@ const DeleteHosts = (props: PropsToDeleteHosts) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: JSX.Element[] = [
+  const modalActionsDelete: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-delete"
       key="delete-hosts"
@@ -215,7 +215,7 @@ const DeleteHosts = (props: PropsToDeleteHosts) => {
     </Button>,
   ];
 
-  const modalDelete: JSX.Element = (
+  const modalDelete: React.JSX.Element = (
     <>
       <ModalWithFormLayout
         dataCy="delete-hosts-modal"

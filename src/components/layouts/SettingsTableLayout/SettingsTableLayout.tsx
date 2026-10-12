@@ -29,8 +29,8 @@ interface PropsToSettingsTableLayout {
   tableClasses?: string;
   tableId: string;
   isStickyHeader: boolean;
-  tableHeader?: JSX.Element;
-  tableBody: JSX.Element[] | JSX.Element;
+  tableHeader?: React.JSX.Element;
+  tableBody: React.JSX.Element[] | React.JSX.Element;
   onDeleteModal: () => void;
   isDeleteDisabled?: boolean;
   onAddModal: () => void;

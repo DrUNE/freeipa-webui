@@ -45,8 +45,7 @@ interface RoleItem {
 }
 
 type PrivilegeMemberMutationResponse =
-  | { data?: FindRPCResponse }
-  | { error: FetchBaseQueryError | SerializedError };
+  { data?: FindRPCResponse } | { error: FetchBaseQueryError | SerializedError };
 
 const MembersRoles = (props: PropsToMembersRoles) => {
   const dispatch = useAppDispatch();

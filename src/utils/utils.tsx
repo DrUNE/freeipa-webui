@@ -271,14 +271,14 @@ export const isSysAccountSelectable = (sysAccount: SysAccount) =>
  * @param {FetchBaseQueryError | SerializedError} errorFromApiCall -  Error from the API call
  * @param {string} contextMessage - Context error message
  * @param {string} key - Unique key for the error element
- * @returns {JSX.Element} - JSX element containing the error message
+ * @returns {React.JSX.Element} - JSX element containing the error message
  */
 export const apiErrorToJsXError = (
   errorFromApiCall: FetchBaseQueryError | SerializedError,
   contextMessage: string,
   key: string
 ) => {
-  let errorJsx: JSX.Element = <></>;
+  let errorJsx: React.JSX.Element = <></>;
 
   if ("originalStatus" in errorFromApiCall) {
     // The original status is accessible here (error 401)

@@ -132,8 +132,7 @@ const ServicesSettings = (props: PropsToServicesSettings) => {
     executeUnprovision(service).then((result) => {
       if ("data" in result) {
         const disableError = result.data?.error as
-          | FetchBaseQueryError
-          | SerializedError;
+          FetchBaseQueryError | SerializedError;
 
         if (disableError) {
           // alert: error

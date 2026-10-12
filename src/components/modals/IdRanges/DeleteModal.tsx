@@ -166,7 +166,7 @@ const DeleteModal = (props: PropsToDelete) => {
       });
   };
 
-  const modalActionsDelete: JSX.Element[] = [
+  const modalActionsDelete: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-delete"
       key="delete-idranges"

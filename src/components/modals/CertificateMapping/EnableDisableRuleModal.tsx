@@ -65,7 +65,7 @@ const EnableDisableRuleModal = (props: EnableDisableRuleModalProps) => {
     props.onClose();
   };
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-ok"
       key={props.operation + "-" + props.ruleId}

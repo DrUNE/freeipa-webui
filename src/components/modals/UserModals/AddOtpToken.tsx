@@ -132,7 +132,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     }
   };
 
-  const typeComponent: JSX.Element = (
+  const typeComponent: React.JSX.Element = (
     <Flex>
       <FlexItem>
         <Radio
@@ -157,7 +157,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     </Flex>
   );
 
-  const algorithmComponent: JSX.Element = (
+  const algorithmComponent: React.JSX.Element = (
     <Flex>
       <FlexItem>
         <Radio
@@ -210,7 +210,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     </Flex>
   );
 
-  const digitsComponent: JSX.Element = (
+  const digitsComponent: React.JSX.Element = (
     <Flex>
       <FlexItem>
         <Radio
@@ -288,7 +288,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     </MenuToggle>
   );
 
-  const ownerComponent: JSX.Element = (
+  const ownerComponent: React.JSX.Element = (
     <Select
       data-cy="modal-select-owner"
       id={"owner"}

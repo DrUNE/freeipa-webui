@@ -14,7 +14,7 @@ type ToolbarItemAlignment = ToolbarItemProps["align"];
 export interface ToolbarItem {
   key: number;
   id?: string;
-  element?: JSX.Element;
+  element?: React.JSX.Element;
   toolbarItemVariant?: ToolbarItemVariant;
   toolbarItemGap?: ToolbarItemGap;
   toolbarItemAlignment?: ToolbarItemAlignment;

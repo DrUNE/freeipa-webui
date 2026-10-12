@@ -240,7 +240,7 @@ const DeleteDnsRecordsModal = (props: DeleteDnsRecordsModalProps) => {
     },
   ];
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="delete"
       variant="danger"

@@ -6,7 +6,7 @@ import { OutlinedQuestionCircleIcon } from "@patternfly/react-icons";
 
 interface PropsToHelpTextLayout {
   textContent: string;
-  icon?: JSX.Element;
+  icon?: React.JSX.Element;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 

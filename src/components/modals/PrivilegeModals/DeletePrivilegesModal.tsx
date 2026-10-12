@@ -137,7 +137,7 @@ const DeletePrivilegesModal = (props: DeletePrivilegesModalProps) => {
   };
 
   // Modal actions
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="delete-privileges"
       variant="danger"

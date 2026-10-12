@@ -11,7 +11,7 @@ interface PropsToModalLayout {
   dataCy: string;
   isOpen: boolean;
   onClose: () => void;
-  actions: JSX.Element[];
+  actions: React.JSX.Element[];
   title: string;
   variant?: "default" | "small" | "medium" | "large";
   content: React.ReactNode;

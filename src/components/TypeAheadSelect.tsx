@@ -32,7 +32,7 @@ const TypeAheadSelect = (props: PropsToTypeAheadSelect) => {
     null
   );
   const [activeItemId, setActiveItemId] = React.useState<string | null>(null);
-  const textInputRef = React.useRef<HTMLInputElement>();
+  const textInputRef = React.useRef<HTMLInputElement>(null);
 
   const NO_RESULTS = "no results";
 

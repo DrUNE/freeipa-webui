@@ -177,7 +177,7 @@ const DeleteHBACServiceGroup = (props: PropsToDeleteServices) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: JSX.Element[] = [
+  const modalActionsDelete: React.JSX.Element[] = [
     <Button
       key="delete-hbacservicegroups"
       variant="danger"
@@ -201,7 +201,7 @@ const DeleteHBACServiceGroup = (props: PropsToDeleteServices) => {
     </Button>,
   ];
 
-  const modalDelete: JSX.Element = (
+  const modalDelete: React.JSX.Element = (
     <>
       <ModalWithFormLayout
         dataCy="delete-hbac-service-groups-modal"

@@ -300,7 +300,7 @@ const InclusiveExclusiveSection = (props: PropsToInclusiveExclusiveSection) => {
     },
   ];
 
-  const addModalActions: JSX.Element[] = [
+  const addModalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-add"
       key="add-inclusive"

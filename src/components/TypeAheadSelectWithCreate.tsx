@@ -33,7 +33,7 @@ const TypeAheadSelectWithCreate = (props: PropsToTypeAheadSelectWithCreate) => {
   );
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
   const [onCreation, setOnCreation] = React.useState<boolean>(false); // Boolean to refresh filter state after new option is created
-  const textInputRef = React.useRef<HTMLInputElement>();
+  const textInputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     setSelectOptions(props.options);

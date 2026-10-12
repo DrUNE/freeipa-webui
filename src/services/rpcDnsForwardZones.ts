@@ -50,26 +50,22 @@ interface BaseDnsForwardZonePayload {
   idnsforwardpolicy: IDNSForwardPolicy;
   version?: string;
 }
-export interface BaseDnsForwardZoneAddPayload
-  extends BaseDnsForwardZonePayload {
+export interface BaseDnsForwardZoneAddPayload extends BaseDnsForwardZonePayload {
   skipOverlapCheck: boolean;
 }
 
 export interface DnsForwardZoneModPayload
-  extends Partial<BaseDnsForwardZonePayload>,
-    ShowDnsForwardZonePayload {}
+  extends Partial<BaseDnsForwardZonePayload>, ShowDnsForwardZonePayload {}
 
 interface NameDnsForwardZoneAddPayload
-  extends BaseDnsForwardZoneAddPayload,
-    ShowDnsForwardZonePayload {}
+  extends BaseDnsForwardZoneAddPayload, ShowDnsForwardZonePayload {}
 
 interface FromIpDnsForwardZoneAddPayload extends BaseDnsForwardZoneAddPayload {
   nameFromIp: string;
 }
 
 export type DnsForwardZoneAddPayload =
-  | NameDnsForwardZoneAddPayload
-  | FromIpDnsForwardZoneAddPayload;
+  NameDnsForwardZoneAddPayload | FromIpDnsForwardZoneAddPayload;
 
 interface DnsForwardZonesFindPayload {
   searchValue: string;

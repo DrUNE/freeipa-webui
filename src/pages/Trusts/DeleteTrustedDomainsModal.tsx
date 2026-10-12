@@ -136,7 +136,7 @@ const DeleteTrustedDomainsModal = (props: DeleteTrustedDomainsModalProps) => {
     },
   ];
 
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       data-cy="modal-button-delete"
       key="delete-trusted-domains"

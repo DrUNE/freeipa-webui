@@ -1,5 +1,5 @@
 {
-  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "$schema": "https://unpkg.com/knip@6/schema.json",
   "entry": [
     "src/main.tsx!",
     "cypress/e2e/**/*.ts",
@@ -12,6 +12,8 @@
     "!cypress/e2e/common/**/*.ts"
   ],
   "includeEntryExports": true,
+  "ignoreExportsUsedInFile": true,
+  "ignoreBinaries": ["podman"],
   "rules": {
     "files": "error",
     "dependencies": "off",
@@ -23,7 +25,6 @@
     "nsExports": "error",
     "nsTypes": "error",
     "enumMembers": "error",
-    "classMembers": "error",
     "duplicates": "error"
   },
   "ignore": [

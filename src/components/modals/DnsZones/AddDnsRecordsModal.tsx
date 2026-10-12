@@ -488,7 +488,7 @@ const AddDnsRecordsModal = (props: PropsToAddModal) => {
   };
 
   // Modal actions
-  const modalActions: JSX.Element[] = [
+  const modalActions: React.JSX.Element[] = [
     <Button
       key="add-new"
       variant="secondary"

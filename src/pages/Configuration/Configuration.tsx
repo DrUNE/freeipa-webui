@@ -115,8 +115,7 @@ const Configuration = () => {
     } as GenericPayload).then((result) => {
       if ("data" in result) {
         const searchError = result.data?.error as
-          | FetchBaseQueryError
-          | SerializedError;
+          FetchBaseQueryError | SerializedError;
 
         if (searchError) {
           // Error

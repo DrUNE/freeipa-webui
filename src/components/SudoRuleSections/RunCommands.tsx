@@ -124,10 +124,7 @@ const RunCommands = (props: PropsToRunCommands) => {
         },
     id: string,
     cmdType:
-      | "allowsudocmd"
-      | "denysudocmd"
-      | "allowsudocmdgroup"
-      | "denysudocmdgroup",
+      "allowsudocmd" | "denysudocmd" | "allowsudocmdgroup" | "denysudocmdgroup",
     commandList: string[]
   ) => {
     if ("data" in response) {
@@ -196,10 +193,7 @@ const RunCommands = (props: PropsToRunCommands) => {
         },
     id: string,
     cmdType:
-      | "allowsudocmd"
-      | "denysudocmd"
-      | "allowsudocmdgroup"
-      | "denysudocmdgroup",
+      "allowsudocmd" | "denysudocmd" | "allowsudocmdgroup" | "denysudocmdgroup",
     cmdListToRemove: string[]
   ) => {
     if ("data" in response) {
