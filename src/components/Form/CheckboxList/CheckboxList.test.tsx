@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { vi, describe, afterEach, it, expect } from "vitest";
-import CheckboxList, { CheckboxListProps } from "./CheckboxList";
+import CheckboxList from "./CheckboxList";
 
 describe("CheckboxList Component", () => {
   const mockSetSelectedValues = vi.fn();
 
-  const defaultProps: CheckboxListProps = {
+  const defaultProps = {
     dataCy: "checkbox-list",
     name: "test-checkboxes",
     options: ["read", "write", "delete"],

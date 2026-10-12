@@ -48,7 +48,7 @@ const NetgroupsTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Netgroups",
         url: "/netgroups",

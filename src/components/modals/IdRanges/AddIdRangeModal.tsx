@@ -10,9 +10,7 @@ import {
   SelectOption,
 } from "@patternfly/react-core";
 // Layouts
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 // Redux
 import { addAlert } from "src/store/Global/alerts-slice";
 import { useAppDispatch } from "src/store/hooks";
@@ -185,7 +183,7 @@ const AddIdRangeModal = (props: PropsToAddModal) => {
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "range-name",
       name: "Range name",

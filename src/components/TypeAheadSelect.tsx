@@ -47,7 +47,7 @@ const TypeAheadSelect = (props: PropsToTypeAheadSelect) => {
   }, [props.selected]);
 
   React.useEffect(() => {
-    let newSelectOptions: SelectOptionProps[] = props.options;
+    let newSelectOptions = props.options;
 
     // Filter menu items based on the text input value when one exists
     if (filterValue) {

@@ -45,7 +45,7 @@ const SudoCmdGroupsTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Sudo command groups",
         url: "/sudo-command-groups",

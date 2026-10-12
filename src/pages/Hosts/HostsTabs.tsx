@@ -79,7 +79,7 @@ const HostsTabs = ({ section }) => {
   React.useEffect(() => {
     setHostId(fqdn);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Hosts",
         url: "/hosts",

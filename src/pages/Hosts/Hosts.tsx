@@ -284,7 +284,7 @@ const Hosts = () => {
   // 'Rebuild auto membership' modal
   const [isMembershipModalOpen, setIsMembershipModalOpen] = useState(false);
 
-  const membershipModalActions: React.JSX.Element[] = [
+  const membershipModalActions = [
     <Button
       data-cy="modal-button-ok"
       key="rebuild-auto-membership"

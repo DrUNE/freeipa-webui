@@ -66,7 +66,7 @@ const PermissionsAddModal = (props: PermissionsAddModalProps) => {
     if (permissionsQuery.data && !permissionsQuery.isFetching) {
       const results = (permissionsQuery.data.result?.result ||
         []) as unknown as Array<{ cn: string[] }>;
-      let items: AvailableItems[] = results.map((perm) => ({
+      let items = results.map((perm) => ({
         key: perm.cn[0],
         title: perm.cn[0],
       }));

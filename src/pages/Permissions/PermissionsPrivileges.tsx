@@ -66,7 +66,7 @@ const PrivilegesAddModal = (props: PrivilegesAddModalProps) => {
     if (privilegesQuery.data && !privilegesQuery.isFetching) {
       const results = (privilegesQuery.data.result?.result ||
         []) as unknown as Array<{ cn: string[] }>;
-      let items: AvailableItems[] = results.map((priv) => ({
+      let items = results.map((priv) => ({
         key: priv.cn[0],
         title: priv.cn[0],
       }));

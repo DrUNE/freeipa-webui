@@ -18,10 +18,7 @@ import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
-import {
-  AddPayload,
-  useAddToAutomemberMutation,
-} from "src/services/rpcAutomember";
+import { useAddToAutomemberMutation } from "src/services/rpcAutomember";
 import { useGetGenericListQuery } from "src/services/rpc";
 // Data types
 import { groupType } from "src/utils/datatypes/globalDataTypes";
@@ -150,7 +147,7 @@ const AddRule = (props: PropsToAddRule) => {
 
   // Add
   const onAdd = () => {
-    const addPayload: AddPayload = {
+    const addPayload = {
       group: groupSelected,
       type: props.ruleType,
     };

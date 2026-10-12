@@ -6,13 +6,9 @@ import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
-import {
-  DeleteTrustedDomainsPayload,
-  useDeleteTrustedDomainsMutation,
-} from "src/services/rpcTrusts";
+import { useDeleteTrustedDomainsMutation } from "src/services/rpcTrusts";
 // Data types
 import { TrustDomain } from "src/utils/datatypes/globalDataTypes";
-import { BatchResult } from "src/services/rpc";
 // Components
 import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import DeletedElementsTable from "src/components/tables/DeletedElementsTable";
@@ -69,7 +65,7 @@ const DeleteTrustedDomainsModal = (props: DeleteTrustedDomainsModalProps) => {
       element.cn.toString()
     );
 
-    const payload: DeleteTrustedDomainsPayload = {
+    const payload = {
       trustId: props.trustId,
       domainNames: elementsToDelete,
     };
@@ -77,7 +73,7 @@ const DeleteTrustedDomainsModal = (props: DeleteTrustedDomainsModalProps) => {
     deleteTrustedDomains(payload)
       .then((response) => {
         if ("data" in response && response.data !== undefined) {
-          const results: BatchResult[] = response.data.result.results;
+          const results = response.data.result.results;
 
           results.forEach((result) => {
             if ("error" in result && result.error) {
@@ -136,7 +132,7 @@ const DeleteTrustedDomainsModal = (props: DeleteTrustedDomainsModalProps) => {
     },
   ];
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-delete"
       key="delete-trusted-domains"

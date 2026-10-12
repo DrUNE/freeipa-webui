@@ -79,7 +79,7 @@ const RolesTabs = ({ section }: RolesTabsProps) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Roles",
         url: "/roles",

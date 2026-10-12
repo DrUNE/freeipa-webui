@@ -409,7 +409,7 @@ export const api = createApi({
         }
 
         // Prepare payload
-        const payloadDataIds: Command = {
+        const payloadDataIds = {
           method: objName + "_find",
           params: [[parsedSearchValue], params],
         };
@@ -583,7 +583,7 @@ export const api = createApi({
         }
 
         // Prepare payload
-        const payloadDataIds: Command = {
+        const payloadDataIds = {
           method: method,
           params: [[searchValue], params],
         };
@@ -704,7 +704,7 @@ export const api = createApi({
           show_method = "group_show";
         }
 
-        const payloadDataBatch: Command[] = idList.map((id) => ({
+        const payloadDataBatch = idList.map((id) => ({
           method: show_method,
           params: [[id], { no_members: true }],
         }));
@@ -781,7 +781,7 @@ export const api = createApi({
         }
 
         // Prepare payload
-        const payloadDataIds: Command = {
+        const payloadDataIds = {
           method: method,
           params: [[searchValue], params],
         };

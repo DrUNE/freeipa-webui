@@ -1348,7 +1348,7 @@ export type ErrorValidationData = {
 };
 
 // Field validation error data
-export const DEFAULT_ERROR_VALIDATION_DATA: ErrorValidationData = {
+export const DEFAULT_ERROR_VALIDATION_DATA = {
   isError: false,
   message: "",
   pfError: ValidatedOptions.default,

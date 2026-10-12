@@ -147,7 +147,7 @@ const HBACRulesTable = (props: PropsToTable) => {
   useEffect(() => {
     if (props.rulesData.selectedRules.length > 0) {
       props.buttonsData.updateIsDeleteButtonDisabled(false);
-      const selectedRules: HBACRule[] = props.rulesData.selectedRules;
+      const selectedRules = props.rulesData.selectedRules;
       if (
         props.buttonsData.updateIsDisableButtonDisabled !== undefined &&
         props.buttonsData.updateIsEnableButtonDisabled !== undefined

@@ -2,14 +2,12 @@ import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { vi, describe, afterEach, it, expect } from "vitest";
 // Component
-import CheckboxListWithFilter, {
-  CheckboxListWithFilterProps,
-} from "./CheckboxListWithFilter";
+import CheckboxListWithFilter from "./CheckboxListWithFilter";
 
 describe("CheckboxListWithFilter Component", () => {
   const mockSetSelectedValues = vi.fn();
 
-  const defaultProps: CheckboxListWithFilterProps = {
+  const defaultProps = {
     dataCy: "checkbox-list-filter",
     name: "test-checkboxes",
     ariaLabel: "Test checkboxes",

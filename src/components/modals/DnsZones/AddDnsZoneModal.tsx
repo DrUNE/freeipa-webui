@@ -14,10 +14,7 @@ import {
   Spinner,
 } from "@patternfly/react-core";
 // RPC
-import {
-  AddDnsZonePayload,
-  useAddDnsZoneMutation,
-} from "src/services/rpcDnsZones";
+import { useAddDnsZoneMutation } from "src/services/rpcDnsZones";
 // Redux
 import { useAppDispatch } from "src/store/hooks";
 // Hooks
@@ -72,7 +69,7 @@ const AddDnsZoneModal = (props: PropsToAddModal) => {
   const onAddDnsZone = () => {
     setIsAddButtonSpinning(true);
 
-    const payload: AddDnsZonePayload = {
+    const payload = {
       idnsname: dnsZoneName,
       nameFromIp: reverseZoneIp,
       skipOverlapCheck: skipOverlapCheck,
@@ -222,7 +219,7 @@ const AddDnsZoneModal = (props: PropsToAddModal) => {
   );
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

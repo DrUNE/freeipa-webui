@@ -157,7 +157,7 @@ const DeleteMultipleRulesModal = (props: DeleteMultipleRulesModalProps) => {
     },
   ];
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-delete"
       key="delete-certmaprules"

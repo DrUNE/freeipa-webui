@@ -45,7 +45,7 @@ const CertificateMappingTabs = ({ section }) => {
   React.useEffect(() => {
     setId(cn);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Certificate Identity Mapping Rule",
         url: "/" + pathname,

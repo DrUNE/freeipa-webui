@@ -24,7 +24,7 @@ import { asRecord } from "src/utils/subIdUtils";
 // Icons
 import { OutlinedQuestionCircleIcon } from "@patternfly/react-icons";
 // RPC
-import { SubidModPayload, useSubidModMutation } from "src/services/rpcSubIds";
+import { useSubidModMutation } from "src/services/rpcSubIds";
 // Components
 import IpaTextInput from "src/components/Form/IpaTextInput";
 import TabLayout from "src/components/layouts/TabLayout";
@@ -84,7 +84,7 @@ const SubidSettings = (props: PropsToSubidSettings) => {
     setIsDataLoading(true);
     const modifiedValues = props.modifiedValues();
 
-    const payload: SubidModPayload = {
+    const payload = {
       ipauniqueid: props.subId.ipauniqueid?.toString() as string,
       description: modifiedValues.description?.toString() as string,
     };

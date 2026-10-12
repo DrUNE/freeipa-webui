@@ -70,7 +70,7 @@ export const TypeAheadWithCheckbox = <T,>({
   }
 
   useEffect(() => {
-    let newSelectOptions: SelectOptionProps[] = localOptions;
+    let newSelectOptions = localOptions;
 
     // Filter menu items based on the text input value when one exists
     if (inputValue) {

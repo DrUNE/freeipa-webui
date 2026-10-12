@@ -106,7 +106,7 @@ const RestorePreservedUsers = (props: PropsToPreservedUsers) => {
   };
 
   // Set the Modal and Action buttons for 'Restore' option
-  const modalRestoreActions: React.JSX.Element[] = [
+  const modalRestoreActions = [
     <Button
       key="restore-users"
       variant="primary"

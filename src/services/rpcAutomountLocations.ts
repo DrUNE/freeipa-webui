@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   getBatchCommand,
   BatchRPCResponse,
   FindRPCResponse,
@@ -55,7 +54,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersionUsed,
         };
 
-        const findCommand: Command = {
+        const findCommand = {
           method: "automountlocation_find",
           params: [[searchValue], findParams],
         };
@@ -77,7 +76,7 @@ const extendedApi = api.injectEndpoints({
         }
 
         // Step 2: Show each location via automountlocation_show
-        const showCommands: Command[] = locationIds.map((locId) => ({
+        const showCommands = locationIds.map((locId) => ({
           method: "automountlocation_show",
           params: [[locId], {}],
         }));
@@ -113,7 +112,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersionUsed,
         };
 
-        const findCommand: Command = {
+        const findCommand = {
           method: "automountlocation_find",
           params: [[searchValue], findParams],
         };
@@ -134,7 +133,7 @@ const extendedApi = api.injectEndpoints({
           locationIds.push(loc.cn[0]);
         }
 
-        const showCommands: Command[] = locationIds.map((locId) => ({
+        const showCommands = locationIds.map((locId) => ({
           method: "automountlocation_show",
           params: [[locId], {}],
         }));
@@ -160,7 +159,7 @@ const extendedApi = api.injectEndpoints({
       AutomountLocationAddPayload
     >({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           version: payload.version || API_VERSION_BACKUP,
         };
 
@@ -172,7 +171,7 @@ const extendedApi = api.injectEndpoints({
     }),
     deleteAutomountLocations: build.mutation<BatchRPCResponse, string[]>({
       query: (locationNames) => {
-        const commands: Command[] = locationNames.map((name) => ({
+        const commands = locationNames.map((name) => ({
           method: "automountlocation_del",
           params: [[name], {}],
         }));

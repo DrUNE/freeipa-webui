@@ -2,9 +2,7 @@ import React from "react";
 // PatternFly
 import { Button, TextArea } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import InputRequiredText from "src/components/layouts/InputRequiredText";
 // RPC
 import { useAddRoleMutation } from "src/services/rpcRoles";
@@ -87,7 +85,7 @@ const AddRoleModal = (props: PropsToAddModal) => {
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "modal-form-role-name",
       name: "Role name",
@@ -121,7 +119,7 @@ const AddRoleModal = (props: PropsToAddModal) => {
   ];
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

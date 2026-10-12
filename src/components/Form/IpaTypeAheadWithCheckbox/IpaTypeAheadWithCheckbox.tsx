@@ -32,7 +32,7 @@ const IpaTypeAheadWithCheckbox = (
   // not present in the predefined list (e.g., attrs added via CLI)
   const mergedOptions = React.useMemo(() => {
     const knownValues = new Set(props.options.map((opt) => opt.value));
-    const extraOptions: SelectOptionProps[] = selectedValues
+    const extraOptions = selectedValues
       .filter((val) => !knownValues.has(val))
       .map((val) => ({
         value: val,

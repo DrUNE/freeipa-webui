@@ -128,7 +128,7 @@ const RolesPrivileges = (props: PropsToRolesPrivileges) => {
         []) as unknown as Array<{
         cn: string[] | string;
       }>;
-      let items: AvailableItems[] = results.map((priv) => ({
+      let items = results.map((priv) => ({
         key: Array.isArray(priv.cn) ? priv.cn[0] : priv.cn,
         title: Array.isArray(priv.cn) ? priv.cn[0] : priv.cn,
       }));

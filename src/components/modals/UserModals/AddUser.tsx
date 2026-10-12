@@ -18,7 +18,6 @@ import { useAppDispatch, useAppSelector } from "src/store/hooks";
 import {
   useSimpleMutCommandMutation,
   useGetObjectMetadataQuery,
-  Command,
   FindRPCResponse,
 } from "src/services/rpc";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
@@ -119,7 +118,7 @@ const AddUser = (props: PropsToAddUser) => {
     ];
 
     // Define payload data
-    const groupFindPayload: Command = {
+    const groupFindPayload = {
       method: "group_find",
       params: groupParamsData,
     };

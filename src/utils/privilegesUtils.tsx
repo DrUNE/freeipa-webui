@@ -45,7 +45,7 @@ export function partialPrivilegeToPrivilege(
 }
 
 export function createEmptyPrivilege(): Privilege {
-  const privilege: Privilege = {
+  const privilege = {
     cn: "",
     description: "",
     memberof_permission: [],

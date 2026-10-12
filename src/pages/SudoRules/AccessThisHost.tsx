@@ -19,7 +19,6 @@ import IpaToggleGroup from "src/components/Form/IpaToggleGroup";
 import { ErrorResult } from "src/services/rpc";
 import {
   AddRemoveHostToSudoRulesResult,
-  AddRemoveToSudoRulesPayload,
   useAddHostToSudoRuleMutation,
   useRemoveHostFromSudoRuleMutation,
   useSaveSudoRuleMutation,
@@ -83,7 +82,7 @@ const AccessThisHost = (props: PropsToAccessThisHost) => {
   // on Add new host
   const onAddNewHost = (newHosts: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "host",
       listOfMembers: newHosts,
@@ -183,7 +182,7 @@ const AccessThisHost = (props: PropsToAccessThisHost) => {
   // on Delete host(s)
   const onDeleteHosts = (hostsToDelete: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "host",
       listOfMembers: hostsToDelete,
@@ -232,7 +231,7 @@ const AccessThisHost = (props: PropsToAccessThisHost) => {
   // on Add new host group
   const onAddNewHostGroup = (newHostGroups: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "hostgroup",
       listOfMembers: newHostGroups,
@@ -317,7 +316,7 @@ const AccessThisHost = (props: PropsToAccessThisHost) => {
   // on Delete host group(s)
   const onDeleteHostGroups = (hostGroupsToDelete: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "hostgroup",
       listOfMembers: hostGroupsToDelete,

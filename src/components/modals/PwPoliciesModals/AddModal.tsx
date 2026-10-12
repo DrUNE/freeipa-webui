@@ -2,15 +2,12 @@ import React from "react";
 // PatternFly
 import { Button } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import SimpleSelector from "src/components/layouts/SimpleSelector";
 // Data types
 import { cnType, PwPolicy } from "src/utils/datatypes/globalDataTypes";
 // RPC
 import {
-  PwPolicyAddPayload,
   PwPolicyFindPayload,
   usePwPolicyAddMutation,
   usePwPolicyFindQuery,
@@ -114,7 +111,7 @@ const AddModal = (props: PropsToAddModal) => {
   const onAdd = () => {
     setIsAddButtonSpinning(true);
 
-    const payload: PwPolicyAddPayload = {
+    const payload = {
       groupId: selectedItem,
       priority: priority,
     };
@@ -164,7 +161,7 @@ const AddModal = (props: PropsToAddModal) => {
   };
 
   // Fields
-  const fields: Field[] = [
+  const fields = [
     {
       id: "group",
       name: "Group",
@@ -200,7 +197,7 @@ const AddModal = (props: PropsToAddModal) => {
   ];
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

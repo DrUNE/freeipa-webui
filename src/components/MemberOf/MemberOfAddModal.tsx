@@ -90,7 +90,7 @@ const InnerMemberOfAddModal = (props: PropsToAdd) => {
 
   // Add group option
   const onClickAddHandler = () => {
-    const optionsToAdd: AvailableItems[] = chosenOptions.map((opt) => ({
+    const optionsToAdd = chosenOptions.map((opt) => ({
       key: opt.text,
       title: opt.text,
     }));

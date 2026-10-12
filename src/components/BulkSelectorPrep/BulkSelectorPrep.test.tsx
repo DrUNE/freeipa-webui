@@ -4,14 +4,7 @@ import { describe, expect, it, afterEach, vi } from "vitest";
 // Component
 import BulkSelectorPrep from "./BulkSelectorPrep";
 
-interface MockType {
-  id: number;
-  cn: string;
-  dn: string;
-  description: string;
-}
-
-const mockList: MockType[] = [
+const mockList = [
   {
     id: 1,
     cn: "Test Group",
@@ -32,7 +25,7 @@ const mockList: MockType[] = [
   },
 ];
 
-const mockShownElementsList: MockType[] = [
+const mockShownElementsList = [
   {
     id: 1,
     cn: "Test Group",

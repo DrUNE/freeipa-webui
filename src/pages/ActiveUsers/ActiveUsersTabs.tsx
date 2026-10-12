@@ -49,7 +49,7 @@ const ActiveUsersTabs = ({ memberof }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Active users",
         url: "/active-users",

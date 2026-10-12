@@ -145,7 +145,7 @@ const extendedApi = api.injectEndpoints({
       DnsForwardZoneModPayload
     >({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           ...(payload.idnsforwarders !== undefined && {
             idnsforwarders: payload.idnsforwarders.map(asIpa),
           }),
@@ -168,14 +168,12 @@ const extendedApi = api.injectEndpoints({
      */
     dnsForwardZoneDelete: build.mutation<BatchRPCResponse, string[]>({
       query: (dnsForwardZoneIds) => {
-        const commands: Command[] = dnsForwardZoneIds.map(
-          (dnsForwardZoneId) => {
-            return {
-              method: "dnsforwardzone_del",
-              params: [[dnsForwardZoneId], {}],
-            };
-          }
-        );
+        const commands = dnsForwardZoneIds.map((dnsForwardZoneId) => {
+          return {
+            method: "dnsforwardzone_del",
+            params: [[dnsForwardZoneId], {}],
+          };
+        });
 
         return getBatchCommand(commands, API_VERSION_BACKUP);
       },
@@ -187,7 +185,7 @@ const extendedApi = api.injectEndpoints({
      */
     dnsForwardZoneDisable: build.mutation<BatchRPCResponse, string[]>({
       query: (dnsZoneIds) => {
-        const commands: Command[] = dnsZoneIds.map((dnsZoneId) => {
+        const commands = dnsZoneIds.map((dnsZoneId) => {
           return {
             method: "dnsforwardzone_disable",
             params: [[dnsZoneId], {}],
@@ -204,7 +202,7 @@ const extendedApi = api.injectEndpoints({
      */
     dnsForwardZoneEnable: build.mutation<BatchRPCResponse, string[]>({
       query: (dnsZoneIds) => {
-        const commands: Command[] = dnsZoneIds.map((dnsZoneId) => {
+        const commands = dnsZoneIds.map((dnsZoneId) => {
           return {
             method: "dnsforwardzone_enable",
             params: [[dnsZoneId], {}],
@@ -239,7 +237,7 @@ const extendedApi = api.injectEndpoints({
 
         // FETCH DNS FORWARD ZONES DATA VIA "dnsforwardzone_find" COMMAND
         // Prepare search parameters
-        const dnsForwardZonesIdsParams: DnsForwardZonesFindPayload = {
+        const dnsForwardZonesIdsParams = {
           pkeyOnly: true,
           version: apiVersion,
           searchValue,

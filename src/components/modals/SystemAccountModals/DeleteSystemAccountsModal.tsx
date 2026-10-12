@@ -168,7 +168,7 @@ const DeleteSystemAccountsModal = (props: DeleteSystemAccountsModalProps) => {
   };
 
   // Modal actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       key="delete-sysaccounts"
       variant="danger"

@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   getBatchCommand,
   getCommand,
   BatchRPCResponse,
@@ -81,7 +80,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Step 1: Find privilege IDs
-        const findCommand: Command = {
+        const findCommand = {
           method: "privilege_find",
           params: [[searchValue], params],
         };
@@ -102,7 +101,7 @@ const extendedApi = api.injectEndpoints({
         }
 
         // Step 2: Batch show for each privilege
-        const showCommands: Command[] = ids.map((id) => ({
+        const showCommands = ids.map((id) => ({
           method: "privilege_show",
           params: [[id], { no_members: true }],
         }));
@@ -155,7 +154,7 @@ const extendedApi = api.injectEndpoints({
         const privilegeNames = payload.privilegeNamesList;
         const noMembers = payload.no_members || false;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const showCommands: Command[] = privilegeNames.map((privilegeName) => ({
+        const showCommands = privilegeNames.map((privilegeName) => ({
           method: "privilege_show",
           params: [[privilegeName], { no_members: noMembers }],
         }));
@@ -192,7 +191,7 @@ const extendedApi = api.injectEndpoints({
     }),
     deletePrivileges: build.mutation<BatchRPCResponse, Privilege[]>({
       query: (privileges) => {
-        const commands: Command[] = privileges.map((privilege) => ({
+        const commands = privileges.map((privilege) => ({
           method: "privilege_del",
           params: [[privilege.cn], {}],
         }));
@@ -293,7 +292,7 @@ const extendedApi = api.injectEndpoints({
       PrivilegeMemberPayload
     >({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           version: API_VERSION_BACKUP,
           [payload.entityType]: payload.memberIds,
         };
@@ -313,7 +312,7 @@ const extendedApi = api.injectEndpoints({
       PrivilegeMemberPayload
     >({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           version: API_VERSION_BACKUP,
           [payload.entityType]: payload.memberIds,
         };

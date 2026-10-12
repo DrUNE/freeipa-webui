@@ -130,7 +130,7 @@ const BulkSelectorPrep = <Type,>(props: PropsToBulkSelectorPrep<Type>) => {
   // - All rows selected: true (full check)
   // - Some rows selected: null (-)
   // - None selected: false (empty)
-  const areAllElementsSelected: boolean | null =
+  const areAllElementsSelected =
     props.elementData.selected.length > 0 &&
     props.elementData.selected.length ===
       props.elementData.selectableTable.length

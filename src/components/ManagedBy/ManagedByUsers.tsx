@@ -24,7 +24,6 @@ import {
   useGettingActiveUserQuery,
 } from "src/services/rpcUsers";
 import {
-  OtpTokenManagedByPayload,
   useAddManagedByOtpTokenMutation,
   useRemoveManagedByOtpTokenMutation,
 } from "src/services/rpcOtpTokens";
@@ -144,7 +143,7 @@ const ManagedByUsers = (props: ManagedByUsersProps) => {
       return;
     }
 
-    const payload: OtpTokenManagedByPayload = {
+    const payload = {
       otpTokenId: props.id,
       users: newUserNames,
     };
@@ -195,7 +194,7 @@ const ManagedByUsers = (props: ManagedByUsersProps) => {
   const onDeleteUser = () => {
     if (props.id === undefined) return;
 
-    const payload: OtpTokenManagedByPayload = {
+    const payload = {
       otpTokenId: props.id,
       users: usersSelected,
     };

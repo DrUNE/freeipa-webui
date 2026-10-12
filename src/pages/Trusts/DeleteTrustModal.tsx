@@ -127,7 +127,7 @@ const DeleteTrustModal = (props: DeleteTrustModalProps) => {
   ];
 
   // Modal actions
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       data-cy="modal-button-ok"
       key="delete-trusts"

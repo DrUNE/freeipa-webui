@@ -47,7 +47,7 @@ const PasswordPoliciesTabs = ({ section }) => {
   React.useEffect(() => {
     setId(cn);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Password policies",
         url: "/" + pathname,

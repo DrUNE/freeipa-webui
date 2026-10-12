@@ -136,7 +136,7 @@ const UsersTable = (props: PropsToTable) => {
   useEffect(() => {
     if (props.usersData.selectedUsers.length > 0) {
       props.buttonsData.updateIsDeleteButtonDisabled(false);
-      const selectedUsers: User[] = props.usersData.selectedUsers;
+      const selectedUsers = props.usersData.selectedUsers;
       if (
         props.buttonsData.updateIsDisableButtonDisabled !== undefined &&
         props.buttonsData.updateIsEnableButtonDisabled !== undefined

@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { vi, describe, it, expect, afterEach } from "vitest";
 // Component
-import IpaCalendar, { IpaCalendarProps } from "./IpaCalendar";
+import IpaCalendar from "./IpaCalendar";
 // Utils
 import { updateIpaObject } from "src/utils/ipaObjectUtils";
 
@@ -51,7 +51,7 @@ describe("IpaCalendar Component", () => {
     },
   };
 
-  const defaultProps: IpaCalendarProps = {
+  const defaultProps = {
     dataCy: "ipa-calendar",
     name: "krbpasswordexpiration2",
     ariaLabel: "Kerberos password expiration date 2",

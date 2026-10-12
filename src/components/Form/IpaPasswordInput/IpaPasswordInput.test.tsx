@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, cleanup, waitFor } from "@testing-library/react";
 import { describe, expect, it, afterEach } from "vitest";
 // Component
-import IpaPasswordInput, { IpaPasswordInputProps } from "./IpaPasswordInput";
+import IpaPasswordInput from "./IpaPasswordInput";
 import { HIDDEN_PASSWORD } from "src/utils/utils";
 
 describe("IpaPasswordInput Component", () => {
@@ -40,7 +40,7 @@ describe("IpaPasswordInput Component", () => {
     },
   };
 
-  const defaultProps: IpaPasswordInputProps = {
+  const defaultProps = {
     dataCy: "ipa-password-input",
     ariaLabel: "Secret",
     name: "ipaidpclientsecret",
@@ -52,7 +52,7 @@ describe("IpaPasswordInput Component", () => {
   afterEach(cleanup);
 
   it("renders IpaPasswordInput correctly with password", async () => {
-    const props: IpaPasswordInputProps = {
+    const props = {
       ...defaultProps,
       ipaObject: {
         ipaidpclientsecret: ["Password"],
@@ -77,7 +77,7 @@ describe("IpaPasswordInput Component", () => {
   });
 
   it("renders IpaPasswordInput correctly with encrypted password", async () => {
-    const props: IpaPasswordInputProps = {
+    const props = {
       ...defaultProps,
       ipaObject: {
         ipaidpclientsecret: [{ __base64__: "YWF3cmV3YQ==" } /* Secret123 */],

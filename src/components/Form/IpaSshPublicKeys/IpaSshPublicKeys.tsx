@@ -26,11 +26,7 @@ import { KeyIcon } from "@patternfly/react-icons";
 import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
-import {
-  Command,
-  ErrorResult,
-  useSimpleMutCommandMutation,
-} from "src/services/rpc";
+import { ErrorResult, useSimpleMutCommandMutation } from "src/services/rpc";
 
 export interface PropsToSshPublicKeysModal {
   dataCy: string;
@@ -131,7 +127,7 @@ const IpaSshPublicKeys = (props: PropsToSshPublicKeysModal) => {
       id = props.ipaObject.fqdn as string;
     }
     // Prepare payload
-    const payload: Command = {
+    const payload = {
       method: method,
       params: [
         [id],
@@ -200,7 +196,7 @@ const IpaSshPublicKeys = (props: PropsToSshPublicKeysModal) => {
     const key_list = [...sshPublicKeysList, textAreaSshPublicKeysValue];
 
     // Prepare payload
-    const payload: Command = {
+    const payload = {
       method: method,
       params: [
         [id],

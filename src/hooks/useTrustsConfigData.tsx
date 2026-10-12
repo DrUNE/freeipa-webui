@@ -75,7 +75,7 @@ const useTrustsConfigData = (): TrustsConfigSettingsData => {
     userGroupsDetails.isFetching,
   ]);
 
-  const settings: TrustsConfigSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isGlobalTrustConfigDataLoading,
     isFetching: globalTrustConfigDetails.isFetching,
     modified,

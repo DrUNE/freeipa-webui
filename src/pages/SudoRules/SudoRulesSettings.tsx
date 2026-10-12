@@ -15,10 +15,8 @@ import {
   AddRemoveAsRunToSudoRulesPayload,
   AddRemoveHostToSudoRulesResult,
   AddRemoveRunAsToSudoRulesResult,
-  AddRemoveToSudoRulesPayload,
   AddRemoveToSudoRulesResult,
   BatchDeleteAllCommandsResult,
-  RemoveAllCommandsFromSudoRulesPayload,
   useRemoveAllCommandsAndSaveFromSudoRuleMutation,
   useRemoveFromSudoRuleMutation,
   useRemoveHostFromSudoRuleMutation,
@@ -169,7 +167,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
   };
 
   const onRemoveUserGroups = (userGroupsToDelete: string[]) => {
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "group",
       listOfMembers: userGroupsToDelete,
@@ -215,7 +213,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
   };
 
   const onRemoveHostGroups = (hostGroupsToDelete: string[]) => {
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "hostgroup",
       listOfMembers: hostGroupsToDelete,
@@ -266,7 +264,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     usersToDelete: string[],
     groupsToDelete: string[]
   ) => {
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "user",
       listOfMembers: usersToDelete,
@@ -316,7 +314,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     hostsToDelete: string[],
     hostGroupsToDelete: string[]
   ) => {
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "host",
       listOfMembers: hostsToDelete,
@@ -369,7 +367,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     denyCommandsToDelete: string[],
     denyCommandGroupsToDelete: string[]
   ) => {
-    const payload: RemoveAllCommandsFromSudoRulesPayload = {
+    const payload = {
       sudoRuleId: props.rule.cn as string,
       allowCommands: allowCommandsToDelete,
       denyCommands: allowCommandGroupsToDelete,
@@ -775,7 +773,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
 
   React.useEffect(() => {
     // - Users list
-    const usersAndExternalsListTemp: TableEntry[] =
+    const usersAndExternalsListTemp =
       props.rule.memberuser_user?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -788,7 +786,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     setUsersAndExternalsList(usersAndExternalsListTemp);
 
     // - User groups list
-    const usergroupsListTemp: TableEntry[] =
+    const usergroupsListTemp =
       props.rule.memberuser_group?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -803,7 +801,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
 
   React.useEffect(() => {
     // - Hosts list
-    const hostsAndExternalsListTemp: TableEntry[] =
+    const hostsAndExternalsListTemp =
       props.rule.memberhost_host?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -816,7 +814,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     setHostsAndExternalsList(hostsAndExternalsListTemp);
 
     // - User groups list
-    const hostgroupsListTemp: TableEntry[] =
+    const hostgroupsListTemp =
       props.rule.memberhost_hostgroup?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -839,28 +837,28 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
 
   React.useEffect(() => {
     // - Allow commands list
-    const allowCommandsListTemp: TableEntry[] =
+    const allowCommandsListTemp =
       props.rule.memberallowcmd_sudocmd?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
     setAllowCommandsList(allowCommandsListTemp);
 
     // - Allow command groups list
-    const allowCommandGroupsListTemp: TableEntry[] =
+    const allowCommandGroupsListTemp =
       props.rule.memberallowcmd_sudocmdgroup?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
     setAllowCommandGroupsList(allowCommandGroupsListTemp);
 
     // - Deny commands list
-    const denyCommandsListTemp: TableEntry[] =
+    const denyCommandsListTemp =
       props.rule.memberdenycmd_sudocmd?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
     setDenyCommandsList(denyCommandsListTemp);
 
     // - Deny command groups list
-    const denyCommandGroupsListTemp: TableEntry[] =
+    const denyCommandGroupsListTemp =
       props.rule.memberdenycmd_sudocmdgroup?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -879,7 +877,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
 
   React.useEffect(() => {
     // RunAs users list
-    const runAsUsersAndExternalsListTemp: TableEntry[] =
+    const runAsUsersAndExternalsListTemp =
       props.rule.ipasudorunas_user?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -892,7 +890,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     setRunAsUsersAndExternalsList(runAsUsersAndExternalsListTemp);
 
     // Groups of RunAs Users list
-    const runAsUsersGroupsAndExternalsListTemp: TableEntry[] =
+    const runAsUsersGroupsAndExternalsListTemp =
       props.rule.ipasudorunas_group?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];
@@ -905,7 +903,7 @@ const SudoRulesSettings = (props: PropsToSudoRulesSettings) => {
     setRunAsUsersGroupsAndExternalsList(runAsUsersGroupsAndExternalsListTemp);
 
     // RunAs groups list
-    const runAsGroupsAndExternalsListTemp: TableEntry[] =
+    const runAsGroupsAndExternalsListTemp =
       props.rule.ipasudorunasgroup_group?.map((entry) => {
         return { entry: entry, showLink: true };
       }) || [];

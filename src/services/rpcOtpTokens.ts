@@ -73,7 +73,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataOtpTokens: Command = {
+        const payloadDataOtpTokens = {
           method: "otptoken_find",
           params: [[searchValue], otpTokensIdsParams],
         };

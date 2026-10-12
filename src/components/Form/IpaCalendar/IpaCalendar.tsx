@@ -4,7 +4,6 @@ import { parseFullDateStringToUTCFormat } from "src/utils/utils";
 import {
   BasicType,
   IPAParamDefinition,
-  ParamProperties,
   getParamProperties,
   updateIpaObject,
 } from "src/utils/ipaObjectUtils";
@@ -29,7 +28,7 @@ export interface IpaCalendarProps extends IPAParamDefinition {
 function getParamPropertiesDateTime(
   parDef: IPAParamDefinition
 ): ParamPropertiesDateTime {
-  const paramProms: ParamProperties = getParamProperties(parDef);
+  const paramProms = getParamProperties(parDef);
 
   let valueDate: Date | null;
   if (paramProms.value instanceof Date) {

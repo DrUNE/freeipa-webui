@@ -174,7 +174,7 @@ const DeleteSudoCmd = (props: PropsToDeleteRules) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       key="delete-sudo-commands"
       variant="danger"
@@ -198,7 +198,7 @@ const DeleteSudoCmd = (props: PropsToDeleteRules) => {
     </Button>,
   ];
 
-  const modalDelete: React.JSX.Element = (
+  const modalDelete = (
     <>
       <ModalWithFormLayout
         dataCy="delete-sudo-commands-modal"

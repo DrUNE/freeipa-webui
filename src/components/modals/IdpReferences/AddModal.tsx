@@ -2,20 +2,10 @@ import React from "react";
 // PatternFly
 import { Button, Radio, TextInput } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
-import SimpleSelector, {
-  SelectOptionProps,
-} from "src/components/layouts/SimpleSelector";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
+import SimpleSelector from "src/components/layouts/SimpleSelector";
 // RPC
-import {
-  CustomIdpAddPayload,
-  IdpAddPayload,
-  KeycloakOrRedHatSSOAddPayload,
-  MicrosoftOrAzureAddPayload,
-  useIdpAddMutation,
-} from "src/services/rpcIdp";
+import { IdpAddPayload, useIdpAddMutation } from "src/services/rpcIdp";
 // Redux
 import { useAppDispatch } from "src/store/hooks";
 // Hooks
@@ -55,7 +45,7 @@ const AddModal = (props: PropsToAddModal) => {
   const [selectedProvider, setSelectedProvider] = React.useState<string>(
     "Keycloak or Red Hat SSO"
   );
-  const providerOptions: SelectOptionProps[] = [
+  const providerOptions = [
     {
       key: "keycloak",
       value: "Keycloak or Red Hat SSO",
@@ -155,7 +145,7 @@ const AddModal = (props: PropsToAddModal) => {
     if (isPreDefinedChecked) {
       if (selectedProvider === "Keycloak or Red Hat SSO") {
         payload.ipaidpprovider = "keycloak";
-        const keycloakData: KeycloakOrRedHatSSOAddPayload = {
+        const keycloakData = {
           ipaidpclientid: clientId,
           ipaidporg: org,
           ipaidpbaseurl: baseUrl,
@@ -163,14 +153,14 @@ const AddModal = (props: PropsToAddModal) => {
         payload.keycloakRedHatData = keycloakData;
       } else if (selectedProvider === "Microsoft or Azure") {
         payload.ipaidpprovider = "microsoft";
-        const microsoftData: MicrosoftOrAzureAddPayload = {
+        const microsoftData = {
           ipaidpclientid: clientId,
           ipaidporg: org,
         };
         payload.microsoftAzureData = microsoftData;
       } else if (selectedProvider === "Okta") {
         payload.ipaidpprovider = "okta";
-        const oktaData: KeycloakOrRedHatSSOAddPayload = {
+        const oktaData = {
           ipaidpclientid: clientId,
           ipaidporg: org,
           ipaidpbaseurl: baseUrl,
@@ -182,7 +172,7 @@ const AddModal = (props: PropsToAddModal) => {
         payload.ipaidpprovider = "github";
       }
     } else if (isCustomChecked) {
-      const customData: CustomIdpAddPayload = {
+      const customData = {
         ipaidpclientid: clientId,
         ipaidpauthendpoint: authUri,
         ipaidpdevauthendpoint: devAuthUri,
@@ -237,7 +227,7 @@ const AddModal = (props: PropsToAddModal) => {
   };
 
   // Fields
-  const clientDetailFields: Field[] = [
+  const clientDetailFields = [
     {
       id: "title1",
       name: "",
@@ -319,7 +309,7 @@ const AddModal = (props: PropsToAddModal) => {
     },
   ];
 
-  const providerTypeRadioFields: Field[] = [
+  const providerTypeRadioFields = [
     {
       id: "title2",
       name: "",
@@ -360,7 +350,7 @@ const AddModal = (props: PropsToAddModal) => {
     },
   ];
 
-  const providerTypeSelector: Field[] = [
+  const providerTypeSelector = [
     {
       id: "provider-type-selector",
       name: "Provider type",
@@ -381,7 +371,7 @@ const AddModal = (props: PropsToAddModal) => {
   ];
 
   // 'Keycloak or Red Hat SSO' option fields
-  const keycloakOptionFields: Field[] = [
+  const keycloakOptionFields = [
     {
       id: "org",
       name: "Organization",
@@ -417,7 +407,7 @@ const AddModal = (props: PropsToAddModal) => {
   ];
 
   // 'Microsoft or Azure' option fields
-  const microsoftOptionFields: Field[] = [
+  const microsoftOptionFields = [
     {
       id: "org",
       name: "Organization",
@@ -436,7 +426,7 @@ const AddModal = (props: PropsToAddModal) => {
     },
   ];
 
-  const customIdpFields: Field[] = [
+  const customIdpFields = [
     {
       id: "auth-uri",
       name: "Authorization URI",
@@ -519,7 +509,7 @@ const AddModal = (props: PropsToAddModal) => {
     },
   ];
 
-  const commonOptionalFields: Field[] = [
+  const commonOptionalFields = [
     {
       id: "scope",
       name: "Scope",
@@ -554,7 +544,7 @@ const AddModal = (props: PropsToAddModal) => {
 
   // Generate fields based on the selected provider
   const generateFields = () => {
-    const fields: Field[] = [...clientDetailFields, ...providerTypeRadioFields];
+    const fields = [...clientDetailFields, ...providerTypeRadioFields];
 
     if (isPreDefinedChecked) {
       fields.push(...providerTypeSelector);
@@ -631,7 +621,7 @@ const AddModal = (props: PropsToAddModal) => {
   );
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

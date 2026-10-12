@@ -255,7 +255,7 @@ const extendedApi = api.injectEndpoints({
           };
 
           // Prepare payload
-          const payloadDataDnsZones: Command = {
+          const payloadDataDnsZones = {
             method: "dnszone_find",
             params: [[searchValue], dnsZonesIdsParams],
           };
@@ -531,7 +531,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataDnsRecords: Command = {
+        const payloadDataDnsRecords = {
           method: "dnsrecord_find",
           params: [[dnsZoneId, recordName], dnsRecordParams],
         };
@@ -593,7 +593,7 @@ const extendedApi = api.injectEndpoints({
 
         records.forEach((dnsRec) => {
           // Convert API object to 'DNSRecord' type
-          const convertedDnsRecord: DNSRecord = apiToDnsRecord(dnsRec.result);
+          const convertedDnsRecord = apiToDnsRecord(dnsRec.result);
           const nsrecordsTypesList = dnsRec.result.dnsrecords as RecordType[];
 
           // Extract the types into a string format (e.g. "A, NS, ...")

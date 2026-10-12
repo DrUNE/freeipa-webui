@@ -56,7 +56,7 @@ const MembersRoles = (props: PropsToMembersRoles) => {
     skip: !props.privilege.cn,
   });
 
-  const privilege: Partial<Privilege> = privilegeQuery.data ?? props.privilege;
+  const privilege = privilegeQuery.data ?? props.privilege;
   const member_role = privilege.member_role ?? [];
 
   const { page, setPage, perPage, searchValue } = useListPageSearchParams();

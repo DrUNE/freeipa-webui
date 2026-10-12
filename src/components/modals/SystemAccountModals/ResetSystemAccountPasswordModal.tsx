@@ -2,9 +2,7 @@ import React from "react";
 // PatternFly
 import { Button } from "@patternfly/react-core";
 // Layouts
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import PasswordInput from "src/components/layouts/PasswordInput";
 // Redux
 import { useAppDispatch } from "src/store/hooks";
@@ -12,10 +10,7 @@ import { useAppDispatch } from "src/store/hooks";
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
 import { ErrorResult } from "src/services/rpc";
-import {
-  SysAccountModPayload,
-  useSaveSysAccountMutation,
-} from "src/services/rpcSystemAccounts";
+import { useSaveSysAccountMutation } from "src/services/rpcSystemAccounts";
 
 interface ResetSystemAccountPasswordModalProps {
   uid: string;
@@ -49,7 +44,7 @@ const ResetSystemAccountPasswordModal = (
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "modal-form-reset-password-new-password",
       name: "New password",
@@ -98,7 +93,7 @@ const ResetSystemAccountPasswordModal = (
   const onResetPassword = () => {
     setSpinning(true);
 
-    const sysAccountModPayload: SysAccountModPayload = {
+    const sysAccountModPayload = {
       uid: props.uid,
       userpassword: newPassword,
     };
@@ -136,7 +131,7 @@ const ResetSystemAccountPasswordModal = (
       });
   };
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       key="reset-password-sysaccount"
       variant="primary"

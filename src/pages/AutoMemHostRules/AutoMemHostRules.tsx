@@ -34,10 +34,7 @@ import TypeAheadSelect from "src/components/TypeAheadSelect";
 import useApiError from "src/hooks/useApiError";
 import GlobalErrors from "src/components/errors/GlobalErrors";
 // RPC
-import {
-  ChangeDefaultPayload,
-  useChangeDefaultGroupMutation,
-} from "src/services/rpcAutomember";
+import { useChangeDefaultGroupMutation } from "src/services/rpcAutomember";
 // Redux
 import { useAppDispatch } from "src/store/hooks";
 // Hooks
@@ -172,7 +169,7 @@ const AutoMemHostRules = () => {
 
   // On select default group
   const onSelectDefaultGroup = (group: string) => {
-    const payload: ChangeDefaultPayload = {
+    const payload = {
       defaultGroup: group,
       type: "hostgroup",
     };

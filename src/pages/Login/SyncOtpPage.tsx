@@ -17,11 +17,7 @@ import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
-import {
-  MetaResponse,
-  SyncOtpPayload,
-  useSyncOtpMutation,
-} from "src/services/rpcAuth";
+import { MetaResponse, useSyncOtpMutation } from "src/services/rpcAuth";
 // React router DOM
 import { useNavigate } from "react-router";
 // Components
@@ -77,7 +73,7 @@ const SyncOtpPage = () => {
 
   // Sync API call
   const onSyncOtp = () => {
-    const payload: SyncOtpPayload = {
+    const payload = {
       user: uid,
       password: password,
       first_code: firstOtp,

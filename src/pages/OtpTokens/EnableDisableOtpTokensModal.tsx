@@ -6,10 +6,7 @@ import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
-import {
-  OtpTokensModifyPayload,
-  useModifyOtpTokensMutation,
-} from "src/services/rpcOtpTokens";
+import { useModifyOtpTokensMutation } from "src/services/rpcOtpTokens";
 // Components
 import ConfirmationModal from "src/components/modals/ConfirmationModal";
 // Utils
@@ -36,12 +33,10 @@ const EnableDisableOtpTokensModal = (
 
   // Enable/Disable operation
   const onEnableDisable = () => {
-    const payload: OtpTokensModifyPayload[] = props.elementsList.map(
-      (element) => ({
-        ipatokenuniqueid: element,
-        ipatokendisabled: props.operation !== "enable",
-      })
-    );
+    const payload = props.elementsList.map((element) => ({
+      ipatokenuniqueid: element,
+      ipatokendisabled: props.operation !== "enable",
+    }));
     modifyOtpTokens(payload).then((response) => {
       if ("data" in response) {
         const { data } = response;
@@ -77,7 +72,7 @@ const EnableDisableOtpTokensModal = (
     props.onClose();
   };
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-ok"
       key={props.operation + "-otp-tokens"}

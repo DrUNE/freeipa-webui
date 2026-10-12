@@ -10,9 +10,7 @@ import { useTrustsSettingsData } from "src/hooks/useTrustsSettingsData";
 // Components
 import TitleLayout from "src/components/layouts/TitleLayout";
 import DataSpinner from "src/components/layouts/DataSpinner";
-import BreadCrumb, {
-  BreadCrumbItem,
-} from "src/components/layouts/BreadCrumb/BreadCrumb";
+import BreadCrumb from "src/components/layouts/BreadCrumb/BreadCrumb";
 import TrustsSettings from "src/pages/Trusts/TrustsSettings";
 import { CnParams, useSafeParams } from "src/utils/paramsUtils";
 import TrustedDomains from "./TrustedDomains";
@@ -36,7 +34,7 @@ const TrustsTabs = ({ section }: { section: string }) => {
     }
   };
 
-  const breadcrumbItems: BreadCrumbItem[] = React.useMemo(
+  const breadcrumbItems = React.useMemo(
     () => [
       {
         name: "Trusts",

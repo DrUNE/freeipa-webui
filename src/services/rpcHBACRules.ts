@@ -114,12 +114,12 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const ruleShowCommand: Command = {
+        const ruleShowCommand = {
           method: "hbacrule_show",
           params: [[ruleId], rule_params],
         };
 
-        const batchPayload: Command[] = [ruleShowCommand];
+        const batchPayload = [ruleShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -149,12 +149,10 @@ const extendedApi = api.injectEndpoints({
         const hbacRuleNames = payload.hbacRuleNamesList;
         const noMembers = payload.no_members || false;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const hbacRuleNamesShowCommands: Command[] = hbacRuleNames.map(
-          (hbacRuleName) => ({
-            method: "hbacrule_show",
-            params: [[hbacRuleName], { no_members: noMembers }],
-          })
-        );
+        const hbacRuleNamesShowCommands = hbacRuleNames.map((hbacRuleName) => ({
+          method: "hbacrule_show",
+          params: [[hbacRuleName], { no_members: noMembers }],
+        }));
         return getBatchCommand(hbacRuleNamesShowCommands, apiVersion);
       },
       transformResponse: (response: BatchRPCResponse): HBACRule[] => {
@@ -333,7 +331,7 @@ const extendedApi = api.injectEndpoints({
 
         const membersToRemove: Command[] = [];
         listOfHbacRules.map((hbacrule) => {
-          const payloadItem: Command = {
+          const payloadItem = {
             method: methodType,
             params: [[hbacrule], { [memberType]: memberId }],
           };

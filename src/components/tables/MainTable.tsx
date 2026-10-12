@@ -200,7 +200,7 @@ const MainTable = <T,>(props: PropsToTable<T>) => {
   React.useEffect(() => {
     if (props.elementsData && props.elementsData.selectedElements.length > 0) {
       props.buttonsData?.updateIsDeleteButtonDisabled(false);
-      const selectedElements: T[] = props.elementsData.selectedElements;
+      const selectedElements = props.elementsData.selectedElements;
 
       if (
         props.buttonsData?.updateIsDisableButtonDisabled !== undefined &&

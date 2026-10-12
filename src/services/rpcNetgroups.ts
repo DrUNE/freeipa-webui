@@ -66,12 +66,12 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const groupShowCommand: Command = {
+        const groupShowCommand = {
           method: "netgroup_show",
           params: [[groupId], group_params],
         };
 
-        const batchPayload: Command[] = [groupShowCommand];
+        const batchPayload = [groupShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -249,12 +249,10 @@ const extendedApi = api.injectEndpoints({
         const netgroupNames = payload.netgroupNamesList;
         const noMembers = payload.no_members || true;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const netgroupShowCommands: Command[] = netgroupNames.map(
-          (netgroupName) => ({
-            method: "netgroup_show",
-            params: [[netgroupName], { no_members: noMembers }],
-          })
-        );
+        const netgroupShowCommands = netgroupNames.map((netgroupName) => ({
+          method: "netgroup_show",
+          params: [[netgroupName], { no_members: noMembers }],
+        }));
         return getBatchCommand(netgroupShowCommands, apiVersion);
       },
       transformResponse: (response: BatchRPCResponse): Netgroup[] => {

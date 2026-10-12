@@ -128,7 +128,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataIdpFind: Command = {
+        const payloadDataIdpFind = {
           method: "idp_find",
           params: [[searchValue], idpFindParams],
         };
@@ -199,11 +199,7 @@ const extendedApi = api.injectEndpoints({
           payloadReceived.ipaidpsub = payload.ipaidpsub;
         }
 
-        let params:
-          | KeycloakOrRedHatSSOAddPayload
-          | MicrosoftOrAzureAddPayload
-          | CustomIdpAddPayload
-          | AddParams = { ...payloadReceived };
+        let params = { ...payloadReceived };
 
         // The type of the payload will be determined by the 'ipaidpprovider' field
         if (payload.ipaidpprovider !== undefined) {

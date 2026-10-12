@@ -159,7 +159,7 @@ const useHostGroupsRulesData = ({
     }
   }, [defaultGroupError]);
 
-  const hostGroupRulesData: HostGroupsRulesData = {
+  const hostGroupRulesData = {
     isLoading:
       hostGroupsLoading ||
       automembersLoading ||

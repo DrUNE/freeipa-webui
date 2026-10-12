@@ -50,7 +50,7 @@ const SelfServicePermissionsTabs = ({
   };
 
   React.useEffect(() => {
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Self service permissions",
         url: "/selfservice-permissions",

@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   getBatchCommand,
   getCommand,
   BatchRPCResponse,
@@ -54,7 +53,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersionUsed,
         };
 
-        const findCommand: Command = {
+        const findCommand = {
           method: "selinuxusermap_find",
           params: [[searchValue], findParams],
         };
@@ -76,7 +75,7 @@ const extendedApi = api.injectEndpoints({
           ids.push(item.cn[0]);
         }
 
-        const showCommands: Command[] = ids.map((id) => ({
+        const showCommands = ids.map((id) => ({
           method: "selinuxusermap_show",
           params: [[id], {}],
         }));
@@ -98,7 +97,7 @@ const extendedApi = api.injectEndpoints({
       SelinuxUserMapAddPayload
     >({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           ipaselinuxuser: payload.ipaselinuxuser,
           version: API_VERSION_BACKUP,
         };
@@ -112,7 +111,7 @@ const extendedApi = api.injectEndpoints({
 
     deleteSelinuxUserMaps: build.mutation<BatchRPCResponse, string[]>({
       query: (payload) => {
-        const commands: Command[] = payload.map((id) => ({
+        const commands = payload.map((id) => ({
           method: "selinuxusermap_del",
           params: [[id], {}],
         }));
@@ -123,7 +122,7 @@ const extendedApi = api.injectEndpoints({
 
     enableSelinuxUserMaps: build.mutation<BatchRPCResponse, string[]>({
       query: (ids) => {
-        const commands: Command[] = ids.map((id) => ({
+        const commands = ids.map((id) => ({
           method: "selinuxusermap_enable",
           params: [[id], {}],
         }));
@@ -134,7 +133,7 @@ const extendedApi = api.injectEndpoints({
 
     disableSelinuxUserMaps: build.mutation<BatchRPCResponse, string[]>({
       query: (ids) => {
-        const commands: Command[] = ids.map((id) => ({
+        const commands = ids.map((id) => ({
           method: "selinuxusermap_disable",
           params: [[id], {}],
         }));

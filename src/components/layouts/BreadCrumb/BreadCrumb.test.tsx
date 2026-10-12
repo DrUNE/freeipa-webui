@@ -2,7 +2,7 @@ import React from "react";
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 // Component
-import BreadCrumb, { BreadCrumbItem } from "./BreadCrumb";
+import BreadCrumb from "./BreadCrumb";
 import { MemoryRouter } from "react-router";
 
 describe("BreadCrumb Component", () => {
@@ -12,7 +12,7 @@ describe("BreadCrumb Component", () => {
   });
 
   it("renders the BreadCrumb component with items", async () => {
-    const breadCrumbItems: BreadCrumbItem[] = [
+    const breadCrumbItems = [
       {
         name: "Active users",
         url: "/active-users",
@@ -34,7 +34,7 @@ describe("BreadCrumb Component", () => {
   });
 
   it("renders the BreadCrumb component with preText", async () => {
-    const breadCrumbItems: BreadCrumbItem[] = [
+    const breadCrumbItems = [
       {
         name: "Active users",
         url: "/active-users",
@@ -56,7 +56,7 @@ describe("BreadCrumb Component", () => {
   });
 
   it("has a valid link", () => {
-    const breadCrumbItems: BreadCrumbItem[] = [
+    const breadCrumbItems = [
       {
         name: "Active users",
         url: "/active-users",

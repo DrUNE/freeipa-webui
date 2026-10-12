@@ -49,12 +49,10 @@ const extendedApi = api.injectEndpoints({
         const sudoRuleNames = payload.sudoCmdNamesList;
         const noMembers = payload.no_members || false;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const sudoRuleNamesShowCommands: Command[] = sudoRuleNames.map(
-          (sudoRuleName) => ({
-            method: "sudocmdgroup_show",
-            params: [[sudoRuleName], { no_members: noMembers }],
-          })
-        );
+        const sudoRuleNamesShowCommands = sudoRuleNames.map((sudoRuleName) => ({
+          method: "sudocmdgroup_show",
+          params: [[sudoRuleName], { no_members: noMembers }],
+        }));
         return getBatchCommand(sudoRuleNamesShowCommands, apiVersion);
       },
       transformResponse: (response: BatchRPCResponse): SudoCmdGroup[] => {
@@ -112,12 +110,12 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const showCommand: Command = {
+        const showCommand = {
           method: "sudocmdgroup_show",
           params: [[group], params],
         };
 
-        const batchPayload: Command[] = [showCommand];
+        const batchPayload = [showCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },

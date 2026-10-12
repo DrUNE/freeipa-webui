@@ -171,7 +171,7 @@ const StagePreservedUsers = (props: PropsToStagePreservedUsers) => {
   };
 
   // Set the Modal and Action buttons for 'Stage' option
-  const modalStageActions: React.JSX.Element[] = [
+  const modalStageActions = [
     <Button
       key="stage-users"
       variant="primary"
@@ -195,7 +195,7 @@ const StagePreservedUsers = (props: PropsToStagePreservedUsers) => {
     </Button>,
   ];
 
-  const modalStage: React.JSX.Element = (
+  const modalStage = (
     <ModalWithFormLayout
       dataCy="stage-preserved-users-modal"
       variantType="medium"

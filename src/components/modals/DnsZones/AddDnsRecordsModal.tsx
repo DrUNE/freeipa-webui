@@ -173,7 +173,7 @@ const AddDnsRecordsModal = (props: PropsToAddModal) => {
     const mandatoryFieldsForType = mandatoryFields[recordType];
     const currentConfig = dnsRecordConfigs[recordType];
 
-    const allRequiredFieldsFilled: boolean = mandatoryFieldsForType.every(
+    const allRequiredFieldsFilled = mandatoryFieldsForType.every(
       (fieldName: string) => {
         const value = fieldValues[fieldName];
         const fieldConfig = currentConfig.find((f) => f.name === fieldName);
@@ -488,7 +488,7 @@ const AddDnsRecordsModal = (props: PropsToAddModal) => {
   };
 
   // Modal actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       key="add-new"
       variant="secondary"

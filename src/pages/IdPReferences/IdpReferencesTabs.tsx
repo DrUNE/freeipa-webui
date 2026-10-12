@@ -47,7 +47,7 @@ const IdpReferencesTabs = ({ section }) => {
   React.useEffect(() => {
     setId(cn);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Identity provider references",
         url: "/" + pathname,

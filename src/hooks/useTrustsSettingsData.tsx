@@ -48,7 +48,7 @@ const useTrustsSettingsData = (trustId: string): TrustsSettingsData => {
     }
   }, [trustData, trustDetails.isFetching]);
 
-  const settings: TrustsSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isTrustDataLoading,
     isFetching: trustDetails.isFetching,
     modified,

@@ -41,7 +41,7 @@ const useIdpRefSettingsData = (idpRefId: string): IdpRefSettingsData => {
     }
   }, [idpRefData, idpRefDetails.isFetching]);
 
-  const settings: IdpRefSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isIdpRefDataLoading,
     isFetching: idpRefDetails.isFetching,
     modified,

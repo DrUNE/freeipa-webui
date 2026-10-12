@@ -47,15 +47,13 @@ const useDnsServersSettingsData = (
       !dnsServerDetails.isFetching &&
       "result" in dnsServerData.result
     ) {
-      const currentDnsServer: DnsServer = apiToDnsServer(
-        dnsServerData.result.result
-      );
+      const currentDnsServer = apiToDnsServer(dnsServerData.result.result);
       setDnsServer(currentDnsServer);
       setDnsServerDup(currentDnsServer);
     }
   }, [dnsServerData, dnsServerDetails.isFetching]);
 
-  const settings: DnsServersSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isDnsServerDataLoading,
     isFetching: dnsServerDetails.isFetching,
     modified,

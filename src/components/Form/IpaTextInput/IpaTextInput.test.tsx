@@ -8,7 +8,7 @@ import {
 } from "@testing-library/react";
 import { describe, vi, afterEach, it, expect } from "vitest";
 // Component
-import IpaTextInput, { IpaTextInputProps } from "./IpaTextInput";
+import IpaTextInput from "./IpaTextInput";
 
 describe("IpaTextInput Component", () => {
   const mockOnChange = vi.fn();
@@ -85,7 +85,7 @@ describe("IpaTextInput Component", () => {
     objectclass: [],
   };
 
-  const defaultProps: IpaTextInputProps = {
+  const defaultProps = {
     dataCy: "ipa-text-input",
     name: "customipatextinput",
     ariaLabel: "Custom IpaTextInput",

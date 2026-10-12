@@ -81,7 +81,7 @@ const IdRanges = () => {
   const [showDeleteModal, setShowDeleteModal] = React.useState(false);
 
   const updateSelectedIdRanges = (idRange: IdRange[], isSelected: boolean) => {
-    let newSelectedIdRanges: IdRange[] = [...selectedElements];
+    let newSelectedIdRanges = [...selectedElements];
 
     if (isSelected) {
       for (let i = 0; i < idRange.length; i++) {

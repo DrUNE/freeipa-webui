@@ -12,10 +12,8 @@ import { useAppDispatch } from "src/store/hooks";
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
 import {
-  DeleteDnsRecordPayload,
   useDnsRecordDeleteMutation,
   useDeleteDnsRecordFromSettingsMutation,
-  DynamicDeleteDnsRecordPayload,
 } from "src/services/rpcDnsZones";
 // Data types
 import { DNSRecord, ErrorData } from "src/utils/datatypes/globalDataTypes";
@@ -84,9 +82,9 @@ const DeleteDnsRecordsModal = (props: DeleteDnsRecordsModalProps) => {
       }
     } else if ("data" in error && error.data) {
       const errorData = error.data as ErrorData;
-      const errorCode: string = errorData.code;
-      const errorName: string = errorData.name;
-      const errorMessage: string = errorData.error;
+      const errorCode = errorData.code;
+      const errorName = errorData.name;
+      const errorMessage = errorData.error;
 
       setErrorTitle("IPA error " + errorCode + ": " + errorName);
       setErrorMessage(errorMessage);
@@ -100,7 +98,7 @@ const DeleteDnsRecordsModal = (props: DeleteDnsRecordsModalProps) => {
     // Use conditional logic to call the correct API with the right payload type
     if (props.recordName && props.recordTypeName) {
       // Delete specific record data from settings page
-      const payload: DynamicDeleteDnsRecordPayload = {
+      const payload = {
         dnsZoneId: props.dnsZoneId,
         recordName: props.recordName,
         recordTypeName: props.recordTypeName,
@@ -114,7 +112,7 @@ const DeleteDnsRecordsModal = (props: DeleteDnsRecordsModalProps) => {
 
           if (data.error) {
             // Handle error at the response level
-            const errorData: ErrorData = {
+            const errorData = {
               code:
                 typeof data.error === "object"
                   ? data.error.code.toString()
@@ -159,7 +157,7 @@ const DeleteDnsRecordsModal = (props: DeleteDnsRecordsModalProps) => {
       });
     } else {
       // Delete entire records
-      const payload: DeleteDnsRecordPayload = {
+      const payload = {
         dnsZoneId: props.dnsZoneId,
         recordNames: props.elementsToDelete.map((element) =>
           element.idnsname.toString()
@@ -240,7 +238,7 @@ const DeleteDnsRecordsModal = (props: DeleteDnsRecordsModalProps) => {
     },
   ];
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       key="delete"
       variant="danger"

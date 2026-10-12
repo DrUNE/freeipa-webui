@@ -49,7 +49,7 @@ const SudoCmdsTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Sudo commands",
         url: "/sudo-commands",

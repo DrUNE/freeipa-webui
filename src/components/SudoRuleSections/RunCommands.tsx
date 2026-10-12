@@ -19,7 +19,6 @@ import IpaToggleGroup from "src/components/Form/IpaToggleGroup";
 import { BatchResponse, ErrorResult, FindRPCResponse } from "src/services/rpc";
 import {
   AddRemoveCommandToSudoRulesResult,
-  AddRemoveToSudoRulesPayload,
   useAddAllowCommandToSudoRuleMutation,
   useAddDenyCommandToSudoRuleMutation,
   useRemoveAllowCommandFromSudoRuleMutation,
@@ -250,7 +249,7 @@ const RunCommands = (props: PropsToRunCommands) => {
   // Allow commands - Operations
   const onAddNewAllowCommand = (newCommands: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmd",
       listOfMembers: newCommands,
@@ -268,7 +267,7 @@ const RunCommands = (props: PropsToRunCommands) => {
 
   const onDeleteFromAllowCommand = (commandsToDelete: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmd",
       listOfMembers: commandsToDelete,
@@ -327,7 +326,7 @@ const RunCommands = (props: PropsToRunCommands) => {
   // Allow command groups - Operations
   const onAddNewAllowCommandGroup = (newCmdGroups: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmdgroup",
       listOfMembers: newCmdGroups,
@@ -345,7 +344,7 @@ const RunCommands = (props: PropsToRunCommands) => {
 
   const onDeleteFromAllowCommandGroup = (cmdGroupsToDelete: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmdgroup",
       listOfMembers: cmdGroupsToDelete,
@@ -401,7 +400,7 @@ const RunCommands = (props: PropsToRunCommands) => {
   // Deny commands - Operations
   const onAddNewDenyCommand = (commandsToAdd: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmd",
       listOfMembers: commandsToAdd,
@@ -419,7 +418,7 @@ const RunCommands = (props: PropsToRunCommands) => {
 
   const onDeleteFromDenyCommand = (commandsToDelete: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmd",
       listOfMembers: commandsToDelete,
@@ -475,7 +474,7 @@ const RunCommands = (props: PropsToRunCommands) => {
   // Deny command groups - Operations
   const onAddNewDenyCommandGroup = (cmsGroupsToAdd: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmdgroup",
       listOfMembers: cmsGroupsToAdd,
@@ -493,7 +492,7 @@ const RunCommands = (props: PropsToRunCommands) => {
 
   const onDeleteFromDenyCommandGroup = (cmdGroupsToDelete: string[]) => {
     setModalSpinning(true);
-    const payload: AddRemoveToSudoRulesPayload = {
+    const payload = {
       toId: props.rule.cn as string,
       type: "sudocmdgroup",
       listOfMembers: cmdGroupsToDelete,

@@ -5,14 +5,10 @@ import {
   screen,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
-import { afterEach, describe, expect, it, Mock, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 // Component
 import DualListLayout, { DualListProps } from "./DualListLayout";
 import { renderWithRouter } from "src/utils/testRouterUtils";
-
-interface MockReturn {
-  data: { list: string[] } | { error: { message: string } };
-}
 
 const mockOnOpenModal = vi.fn();
 const mockOnCloseModal = vi.fn();
@@ -23,7 +19,7 @@ const mockItems = ["first", "second", "third"];
 /**
  * DualListLayout
  */
-const retrieveIDs: Mock<() => Promise<MockReturn>> = vi.fn(async () => {
+const retrieveIDs = vi.fn(async () => {
   return { data: { list: mockItems } };
 });
 

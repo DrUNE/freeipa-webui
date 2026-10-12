@@ -50,7 +50,7 @@ const SubIdTabs = ({ section }) => {
   React.useEffect(() => {
     setId(ipauniqueid);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Subordinate IDs",
         url: "/" + pathname,

@@ -28,7 +28,7 @@ export function partialHBACServiceToHBACService(
 
 // Get empty User object initialized with default values
 export function createEmptyHBACService(): HBACService {
-  const hbacService: HBACService = {
+  const hbacService = {
     description: "",
     cn: "",
     dn: "",

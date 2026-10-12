@@ -9,7 +9,6 @@ import DeleteDnsRecordsModal from "src/components/modals/DnsZones/DeleteDnsRecor
 import {
   DNSRecord,
   DnsRecordType,
-  RecordConfigType,
   RecordType,
 } from "src/utils/datatypes/globalDataTypes";
 // Utils
@@ -25,7 +24,7 @@ interface PropsToOtherRecordTypes {
   dnsRecords: RecordType[];
 }
 
-const OTHER_RECORD_TYPES: RecordConfigType = {
+const OTHER_RECORD_TYPES = {
   A6: {
     columns: [{ key: "a6_part_data", label: "Record data" }],
   },

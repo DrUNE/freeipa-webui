@@ -117,7 +117,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataPwPolicy: Command = {
+        const payloadDataPwPolicy = {
           method: "pwpolicy_find",
           params: [[searchValue], pwPolicyIdsParams],
         };

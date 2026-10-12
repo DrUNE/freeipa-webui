@@ -28,7 +28,7 @@ export function partialHBACSvcGrpToHBACSvcGrp(
 
 // Get empty object initialized with default values
 export function createEmptyHBACGroupService(): HBACServiceGroup {
-  const hbacService: HBACServiceGroup = {
+  const hbacService = {
     description: "",
     cn: "",
     dn: "",

@@ -1,7 +1,6 @@
 import {
   api,
   BatchRPCResponse,
-  Command,
   FindRPCResponse,
   getBatchCommand,
   getCommandNoVersion,
@@ -31,14 +30,12 @@ const BATCH_COMMANDS_AUTH = [
   "vaultconfig_show",
 ];
 
-const BATCH_COMMANDS_AUTH_PAYLOAD: Command[] = BATCH_COMMANDS_AUTH.map(
-  (method) => {
-    return {
-      method: method,
-      params: [[], {}],
-    };
-  }
-);
+const BATCH_COMMANDS_AUTH_PAYLOAD = BATCH_COMMANDS_AUTH.map((method) => {
+  return {
+    method: method,
+    params: [[], {}],
+  };
+});
 
 export interface UserMetadata {
   ipaServerConfiguration: Record<string, unknown>;
@@ -207,7 +204,7 @@ const extendedApi = api.injectEndpoints({
         response: FetchBaseQueryError,
         meta: FetchBaseQueryMeta
       ) => {
-        const responseData: ResponseOnPwdReset = {
+        const responseData = {
           response: response as FetchBaseQueryError,
           metaResponse: meta as unknown as MetaResponse,
         };

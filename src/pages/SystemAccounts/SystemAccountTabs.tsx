@@ -69,7 +69,7 @@ const SystemAccountTabs = ({ section }: SystemAccountTabsProps) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "System accounts",
         url: "/" + pathname,

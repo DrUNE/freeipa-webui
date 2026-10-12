@@ -278,7 +278,7 @@ export const apiErrorToJsXError = (
   contextMessage: string,
   key: string
 ) => {
-  let errorJsx: React.JSX.Element = <></>;
+  let errorJsx = <></>;
 
   if ("originalStatus" in errorFromApiCall) {
     // The original status is accessible here (error 401)

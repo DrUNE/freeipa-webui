@@ -2,9 +2,7 @@ import React from "react";
 // PatternFly
 import { Button, Checkbox, TextArea } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import InputRequiredText from "src/components/layouts/InputRequiredText";
 import PasswordInput from "src/components/layouts/PasswordInput";
 // RPC
@@ -121,7 +119,7 @@ const AddSystemAccountModal = (props: PropsToAddModal) => {
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "modal-form-sysaccount-id",
       name: "System account ID",
@@ -209,7 +207,7 @@ const AddSystemAccountModal = (props: PropsToAddModal) => {
   ];
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

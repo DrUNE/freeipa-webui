@@ -16,7 +16,6 @@ import {
 // RPC
 import {
   BaseDnsForwardZoneAddPayload,
-  DnsForwardZoneAddPayload,
   IPAddressWithPort,
   useAddDnsForwardZoneMutation,
 } from "src/services/rpcDnsForwardZones";
@@ -70,7 +69,7 @@ const AddDnsForwardZoneModalInner = (props: PropsToAddModal) => {
 
   // Add DNS zone handler
   const onAddDnsForwardZone = () => {
-    const payload: DnsForwardZoneAddPayload = {
+    const payload = {
       ...((!isReverseZoneIpRadioChecked && { idnsname: dnsZoneName }) || {
         nameFromIp: reverseZoneIP,
       }),
@@ -255,7 +254,7 @@ const AddDnsForwardZoneModalInner = (props: PropsToAddModal) => {
   );
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

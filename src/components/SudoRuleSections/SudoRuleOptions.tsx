@@ -13,7 +13,7 @@ import {
 } from "src/services/rpcSudoRules";
 // Components
 import SettingsTableLayout from "../layouts/SettingsTableLayout";
-import ModalWithFormLayout, { Field } from "../layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "../layouts/ModalWithFormLayout";
 import MemberOfDeleteModal from "../MemberOf/MemberOfDeleteModal";
 import DeletedElementsTable from "../tables/DeletedElementsTable";
 import InputRequiredText from "../layouts/InputRequiredText";
@@ -249,7 +249,7 @@ const SudoRuleOptions = (props: PropsToSudoRuleOptions) => {
     });
   };
 
-  const addModalFields: Field[] = [
+  const addModalFields = [
     {
       id: "sudo-option",
       name: "Sudo option",
@@ -266,7 +266,7 @@ const SudoRuleOptions = (props: PropsToSudoRuleOptions) => {
     },
   ];
 
-  const addModalActions: React.JSX.Element[] = [
+  const addModalActions = [
     <Button
       data-cy="modal-button-add"
       key="delete-groups"

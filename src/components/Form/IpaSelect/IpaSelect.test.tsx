@@ -8,7 +8,7 @@ import {
 } from "@testing-library/react";
 import { vi, describe, it, expect, afterEach } from "vitest";
 // Component
-import IpaSelect, { IPAParamDefinitionSelect } from "./IpaSelect";
+import IpaSelect from "./IpaSelect";
 
 // Mock of util function: updateIpaObject
 vi.mock("src/utils/ipaObjectUtils", async () => ({
@@ -58,7 +58,7 @@ describe("IpaSelect Component", () => {
     },
   };
 
-  const defaultProps: IPAParamDefinitionSelect = {
+  const defaultProps = {
     dataCy: "ipa",
     id: "customipaselect",
     name: "customipaselect",

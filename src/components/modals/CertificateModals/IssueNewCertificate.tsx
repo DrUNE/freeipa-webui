@@ -19,9 +19,7 @@ import { addAlert } from "src/store/Global/alerts-slice";
 // Redux
 import { useAppDispatch, useAppSelector } from "src/store/hooks";
 // Modals
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 // RTK
 import { ErrorResult } from "src/services/rpc";
 import {
@@ -240,7 +238,7 @@ const IssueNewCertificate = (props: PropsToIssueNewCertificate) => {
   };
 
   // Fields
-  const fields: Field[] = [
+  const fields = [
     {
       id: "certificate-authority-selector",
       name: "CA",

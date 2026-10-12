@@ -10,9 +10,7 @@ import { useIdRangesSettingsData } from "src/hooks/useIdRangesSettingsData";
 // Components
 import TitleLayout from "src/components/layouts/TitleLayout";
 import DataSpinner from "src/components/layouts/DataSpinner";
-import BreadCrumb, {
-  BreadCrumbItem,
-} from "src/components/layouts/BreadCrumb/BreadCrumb";
+import BreadCrumb from "src/components/layouts/BreadCrumb/BreadCrumb";
 import IdRangesSettings from "src/pages/IdRanges/IdRangesSettings";
 import { CnParams, useSafeParams } from "src/utils/paramsUtils";
 
@@ -33,7 +31,7 @@ const IdRangesTabs = ({ section }: { section: string }) => {
     }
   };
 
-  const breadcrumbItems: BreadCrumbItem[] = [
+  const breadcrumbItems = [
     {
       name: "ID ranges",
       url: `/${pathname}`,

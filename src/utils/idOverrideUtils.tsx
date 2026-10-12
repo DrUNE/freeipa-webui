@@ -54,7 +54,7 @@ export function partialOverrideUserToOverrideUser(
 
 // Get empty User object initialized with default values
 export function createEmptyOverrideUser(): IDViewOverrideUser {
-  const override: IDViewOverrideUser = {
+  const override = {
     dn: "",
     cn: "",
     description: "",
@@ -102,7 +102,7 @@ export function partialOverrideGroupToOverrideGroup(
 
 // Get empty User object initialized with default values
 export function createEmptyOverrideGroup(): IDViewOverrideGroup {
-  const override: IDViewOverrideGroup = {
+  const override = {
     dn: "",
     cn: "",
     description: "",

@@ -2,12 +2,12 @@ import React from "react";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 // Component
-import PasswordInput, { PropsToPasswordInput } from "./PasswordInput";
+import PasswordInput from "./PasswordInput";
 
 const mockOnChange = vi.fn();
 const mockOnRevealHandler = vi.fn();
 
-const initialProps: PropsToPasswordInput = {
+const initialProps = {
   dataCy: "password-input",
   name: "Password",
   onChange: mockOnChange,
@@ -30,7 +30,7 @@ describe("PasswordInput Component", () => {
   });
 
   it("renders the PasswordInput component unobscured", async () => {
-    const props: PropsToPasswordInput = {
+    const props = {
       ...initialProps,
       passwordHidden: true,
     };
@@ -43,7 +43,7 @@ describe("PasswordInput Component", () => {
   });
 
   it("allows changing PasswordInput component", async () => {
-    const props: PropsToPasswordInput = {
+    const props = {
       ...initialProps,
       value: "",
     };

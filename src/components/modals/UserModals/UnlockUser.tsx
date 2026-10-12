@@ -81,7 +81,7 @@ const UnlockUser = (props: propsToUnlockUser) => {
   };
 
   // Actions
-  const actions: React.JSX.Element[] = [
+  const actions = [
     <Button
       key="unlock-user"
       variant="primary"

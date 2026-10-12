@@ -1,11 +1,8 @@
 import React from "react";
 import { Button, SelectOptionProps } from "@patternfly/react-core";
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import InputWithValidation from "src/components/layouts/InputWithValidation";
 import HelperTextWithIcon from "src/components/layouts/HelperTextWithIcon";
-import type { RuleProps } from "src/components/layouts/InputWithValidation";
 import { TypeAheadWithCheckbox } from "src/components/TypeAheadWithCheckbox";
 import TypeAheadSelectWithCreate from "src/components/TypeAheadSelectWithCreate";
 import CheckboxList from "src/components/Form/CheckboxList";
@@ -91,7 +88,7 @@ const AddDelegationModal = (props: PropsToAddModal) => {
 
   const ACI_NAME_PATTERN = /^[-_ a-zA-Z0-9]+$/;
 
-  const aciNameRules: RuleProps[] = [
+  const aciNameRules = [
     {
       id: "no-leading-trailing-spaces",
       message: "Must not have leading or trailing spaces",
@@ -188,7 +185,7 @@ const AddDelegationModal = (props: PropsToAddModal) => {
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "modal-form-delegation-name",
       name: "Delegation name",
@@ -266,7 +263,7 @@ const AddDelegationModal = (props: PropsToAddModal) => {
     },
   ];
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

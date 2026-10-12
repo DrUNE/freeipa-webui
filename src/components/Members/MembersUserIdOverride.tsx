@@ -19,7 +19,6 @@ import { paginate } from "src/utils/utils";
 // RPC
 import { ErrorResult } from "src/services/rpc";
 import {
-  RoleMemberPayload,
   useAddAsMemberRoleMutation,
   useRemoveAsMemberRoleMutation,
 } from "src/services/rpcRoles";
@@ -93,7 +92,7 @@ const MembersUserIdOverride = (props: PropsToMembersUserIdOverride) => {
   const availableItems = useMemo<AvailableItems[]>(() => {
     if (idOverrideUsersQuery.data && !idOverrideUsersQuery.isFetching) {
       const overrideUsers = idOverrideUsersQuery.data;
-      const items: AvailableItems[] = overrideUsers.map((user) => {
+      const items = overrideUsers.map((user) => {
         const displayName =
           user.ipaoriginaluid || user.uid || user.ipaanchoruuid;
         return {
@@ -122,7 +121,7 @@ const MembersUserIdOverride = (props: PropsToMembersUserIdOverride) => {
       return;
     }
 
-    const payload: RoleMemberPayload = {
+    const payload = {
       entryName: props.id,
       entityType: "idoverrideuser",
       idsToAdd: newIdOverrideNames,
@@ -157,7 +156,7 @@ const MembersUserIdOverride = (props: PropsToMembersUserIdOverride) => {
   };
 
   const onDeleteIdOverrideUser = () => {
-    const payload: RoleMemberPayload = {
+    const payload = {
       entryName: props.id,
       entityType: "idoverrideuser",
       idsToAdd: selectedItems,

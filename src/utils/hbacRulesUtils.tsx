@@ -34,7 +34,7 @@ export function partialHBACRuleToHBACRule(
 
 // Get empty User object initialized with default values
 export function createEmptyHBACRule(): HBACRule {
-  const hbacRule: HBACRule = {
+  const hbacRule = {
     hostcategory: "",
     servicecategory: "",
     description: "",

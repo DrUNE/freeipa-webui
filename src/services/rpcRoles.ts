@@ -87,7 +87,7 @@ const extendedApi = api.injectEndpoints({
         const listOfRoles = payload[2];
         const membersToRemove: Command[] = [];
         listOfRoles.map((role) => {
-          const payloadItem: Command = {
+          const payloadItem = {
             method: "role_remove_member",
             params: [[role], { [memberType]: memberId }],
           };
@@ -106,7 +106,7 @@ const extendedApi = api.injectEndpoints({
         const roleNames = payload.roleNamesList;
         const noMembers = payload.no_members || false;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const roleShowCommands: Command[] = roleNames.map((roleName) => ({
+        const roleShowCommands = roleNames.map((roleName) => ({
           method: "role_show",
           params: [[roleName], { no_members: noMembers }],
         }));
@@ -149,7 +149,7 @@ const extendedApi = api.injectEndpoints({
      */
     deleteRoles: build.mutation<BatchRPCResponse, Role[]>({
       query: (roles) => {
-        const commands: Command[] = roles.map((role) => ({
+        const commands = roles.map((role) => ({
           method: "role_del",
           params: [[role.cn], {}],
         }));
@@ -197,7 +197,7 @@ const extendedApi = api.injectEndpoints({
      */
     addAsMemberRole: build.mutation<FindRPCResponse, RoleMemberPayload>({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           version: API_VERSION_BACKUP,
           [payload.entityType]: payload.idsToAdd,
         };
@@ -214,7 +214,7 @@ const extendedApi = api.injectEndpoints({
      */
     removeAsMemberRole: build.mutation<FindRPCResponse, RoleMemberPayload>({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           version: API_VERSION_BACKUP,
           [payload.entityType]: payload.idsToAdd,
         };

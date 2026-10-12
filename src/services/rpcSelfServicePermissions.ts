@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   ErrorResult,
   getBatchCommand,
   getCommand,
@@ -56,7 +55,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersion,
         };
 
-        const findCommand: Command = {
+        const findCommand = {
           method: "selfservice_find",
           params: [[searchValue], params],
         };
@@ -97,7 +96,7 @@ const extendedApi = api.injectEndpoints({
           );
         }
 
-        const showCommands: Command[] = ids.map((id) => ({
+        const showCommands = ids.map((id) => ({
           method: "selfservice_show",
           params: [[id], {}],
         }));
@@ -122,7 +121,7 @@ const extendedApi = api.injectEndpoints({
       SelfServicePermissionAddPayload
     >({
       query: (payload) => {
-        const params: Record<string, unknown> = {
+        const params = {
           attrs: payload.attrs,
           version: API_VERSION_BACKUP,
         };
@@ -138,7 +137,7 @@ const extendedApi = api.injectEndpoints({
       SelfServicePermission[]
     >({
       query: (permissions) => {
-        const commands: Command[] = permissions.map((perm) => ({
+        const commands = permissions.map((perm) => ({
           method: "selfservice_del",
           params: [[perm.aciname], {}],
         }));

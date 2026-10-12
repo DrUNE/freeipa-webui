@@ -9,9 +9,7 @@ import {
   SelectOption,
 } from "@patternfly/react-core";
 // Modals
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 // Data types
 import { CertificateData } from "src/components/Form/IpaCertificates";
 // Components
@@ -205,7 +203,7 @@ const RevokeCertificate = (props: PropsToRevokeCertificate) => {
     </Button>,
   ];
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "revocation-reason",
       name: "Revocation reason",

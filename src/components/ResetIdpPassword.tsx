@@ -8,7 +8,7 @@ import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 // Components
 import PasswordInput from "src/components/layouts/PasswordInput";
 // RPC
-import { IdpModPayload, useIdpModMutation } from "src/services/rpcIdp";
+import { useIdpModMutation } from "src/services/rpcIdp";
 // Redux
 import { useAppDispatch } from "src/store/hooks";
 // Hooks
@@ -92,7 +92,7 @@ const ResetIdpPassword = (props: PropsToResetIdpPassword) => {
 
   // API call to reset password
   const onResetPassword = () => {
-    const payload: IdpModPayload = {
+    const payload = {
       idpId: props.idpId,
       ipaidpclientsecret: newPassword,
     };

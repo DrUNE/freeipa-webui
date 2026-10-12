@@ -8,7 +8,7 @@ import {
 } from "@testing-library/react";
 import { describe, afterEach, it, expect, vi } from "vitest";
 // Component
-import IpaTextArea, { IpaTextAreaProps } from "./IpaTextArea";
+import IpaTextArea from "./IpaTextArea";
 
 describe("IpaTextArea Component", () => {
   const mockOnChange = vi.fn();
@@ -85,7 +85,7 @@ describe("IpaTextArea Component", () => {
     },
   };
 
-  const defaultProps: IpaTextAreaProps = {
+  const defaultProps = {
     dataCy: "ipa-text-area",
     name: "customipatextarea",
     ariaLabel: "customipatextarea",

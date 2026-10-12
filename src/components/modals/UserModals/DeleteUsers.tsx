@@ -279,7 +279,7 @@ const DeleteUsers = (props: PropsToDeleteUsers) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       data-cy="modal-button-delete"
       key="delete-users"
@@ -314,7 +314,7 @@ const DeleteUsers = (props: PropsToDeleteUsers) => {
     fields.splice(-1);
   }
 
-  const modalDelete: React.JSX.Element = (
+  const modalDelete = (
     <ModalWithFormLayout
       dataCy="delete-users-modal"
       variantType="medium"
@@ -331,7 +331,7 @@ const DeleteUsers = (props: PropsToDeleteUsers) => {
   );
 
   // Set the Modal and Action buttons for 'Preserve' option
-  const modalActionsPreserve: React.JSX.Element[] = [
+  const modalActionsPreserve = [
     <Button
       data-cy="modal-button-preserve"
       key="preserve-users"
@@ -355,7 +355,7 @@ const DeleteUsers = (props: PropsToDeleteUsers) => {
     </Button>,
   ];
 
-  const modalPreserve: React.JSX.Element = (
+  const modalPreserve = (
     <ModalWithFormLayout
       dataCy="preserve-users-modal"
       variantType="medium"

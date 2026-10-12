@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // PatternFly
 import {
   Button,
@@ -97,18 +97,10 @@ const AddIDOverrideUserModal = (props: PropsToAddUser) => {
   }, [props.show, props.users]);
 
   // Refs
-  const loginRef = useRef<HTMLInputElement>(
-    null
-  ) as MutableRefObject<HTMLInputElement>;
-  const gecosRef = useRef<HTMLInputElement>(
-    null
-  ) as MutableRefObject<HTMLInputElement>;
-  const shellRef = useRef<HTMLInputElement>(
-    null
-  ) as MutableRefObject<HTMLInputElement>;
-  const homedirRef = useRef<HTMLInputElement>(
-    null
-  ) as MutableRefObject<HTMLInputElement>;
+  const loginRef = useRef<HTMLInputElement>(null);
+  const gecosRef = useRef<HTMLInputElement>(null);
+  const shellRef = useRef<HTMLInputElement>(null);
+  const homedirRef = useRef<HTMLInputElement>(null);
 
   // List of fields
   const fields = [

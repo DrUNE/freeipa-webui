@@ -81,12 +81,12 @@ const extendedApi = api.injectEndpoints({
           all: true,
           rights: true,
         };
-        const ruleShowCommand: Command = {
+        const ruleShowCommand = {
           method: "hbacsvcgroup_show",
           params: [[svcGrpId], rule_params],
         };
 
-        const batchPayload: Command[] = [ruleShowCommand];
+        const batchPayload = [ruleShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -154,7 +154,7 @@ const extendedApi = api.injectEndpoints({
         const groupNames = payload.groupNamesList;
         const noMembers = payload.no_members || true;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const groupShowCommands: Command[] = groupNames.map((groupName) => ({
+        const groupShowCommands = groupNames.map((groupName) => ({
           method: "hbacsvcgroup_show",
           params: [[groupName], { no_members: noMembers }],
         }));

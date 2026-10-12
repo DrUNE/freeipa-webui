@@ -4,7 +4,6 @@ import {
   getCommand,
   getBatchCommand,
   BatchRPCResponse,
-  Command,
 } from "./rpc";
 // utils
 import { API_VERSION_BACKUP } from "../utils/utils";
@@ -88,7 +87,7 @@ const extendedApi = api.injectEndpoints({
         }
 
         // Build batch idrange_show commands
-        const commands: Command[] = cnList.map((cn) => ({
+        const commands = cnList.map((cn) => ({
           method: "idrange_show",
           params: [[cn], {}],
         }));
@@ -152,7 +151,7 @@ const extendedApi = api.injectEndpoints({
      */
     deleteIdRanges: build.mutation<BatchRPCResponse, string[]>({
       query: (payload) => {
-        const commands: Command[] = payload.map((cn) => ({
+        const commands = payload.map((cn) => ({
           method: "idrange_del",
           params: [[cn], {}],
         }));

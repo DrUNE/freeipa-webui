@@ -45,7 +45,7 @@ const DnsServersTabs = ({ section }: { section: string }) => {
 
   React.useEffect(() => {
     setId(idnsserverid);
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "DNS servers",
         url: "/" + pathname,

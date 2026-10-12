@@ -32,12 +32,12 @@ const useIdRangesSettingsData = (idRangeId: string): IdRangesSettingsData => {
 
   React.useEffect(() => {
     if (idRangeData && !idRangeDetails.isFetching) {
-      const rangeData: IdRange = apiToIdRange(idRangeData.result.result);
+      const rangeData = apiToIdRange(idRangeData.result.result);
       setIdRange(rangeData);
     }
   }, [idRangeData, idRangeDetails.isFetching]);
 
-  const settings: IdRangesSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isIdRangeDataLoading,
     isFetching: idRangeDetails.isFetching,
     refetch: idRangeDetails.refetch,

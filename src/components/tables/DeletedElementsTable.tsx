@@ -47,7 +47,7 @@ interface PropsToDeletedElementsTable<T> {
 const DeletedElementsTable = <T,>(props: PropsToDeletedElementsTable<T>) => {
   // TODO: Check the columnNames against the actual variable name
   //   when retrieving data from the RPC server.
-  const elementsToDelete: T[] = props.elementsToDelete;
+  const elementsToDelete = props.elementsToDelete;
 
   const columnNames =
     props.mode === "passing_full_data"

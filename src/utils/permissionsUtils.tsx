@@ -1,10 +1,9 @@
 // Data types
 import { Metadata, Permission } from "src/utils/datatypes/globalDataTypes";
-import { SelectOptionProps } from "src/components/layouts/SimpleSelector";
 // Utils
 import { convertApiObj } from "./ipaObjectUtils";
 
-export const BIND_RULE_OPTIONS: SelectOptionProps[] = [
+export const BIND_RULE_OPTIONS = [
   { key: "permission", value: "permission" },
   { key: "all", value: "all" },
   { key: "anonymous", value: "anonymous" },

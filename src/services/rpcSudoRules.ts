@@ -236,12 +236,10 @@ const extendedApi = api.injectEndpoints({
         const sudoRuleNames = payload.sudoRuleNamesList;
         const noMembers = payload.no_members || false;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const sudoRuleNamesShowCommands: Command[] = sudoRuleNames.map(
-          (sudoRuleName) => ({
-            method: "sudorule_show",
-            params: [[sudoRuleName], { no_members: noMembers }],
-          })
-        );
+        const sudoRuleNamesShowCommands = sudoRuleNames.map((sudoRuleName) => ({
+          method: "sudorule_show",
+          params: [[sudoRuleName], { no_members: noMembers }],
+        }));
         return getBatchCommand(sudoRuleNamesShowCommands, apiVersion);
       },
       transformResponse: (response: BatchRPCResponse): SudoRule[] => {
@@ -318,7 +316,7 @@ const extendedApi = api.injectEndpoints({
 
         const membersToRemove: Command[] = [];
         listOfSudoRules.map((hbacrule) => {
-          const payloadItem: Command = {
+          const payloadItem = {
             method: methodType,
             params: [[hbacrule], { [memberType]: memberId }],
           };
@@ -377,12 +375,12 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const ruleShowCommand: Command = {
+        const ruleShowCommand = {
           method: "sudorule_show",
           params: [[ruleId], rule_params],
         };
 
-        const batchPayload: Command[] = [ruleShowCommand];
+        const batchPayload = [ruleShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -728,7 +726,7 @@ const extendedApi = api.injectEndpoints({
         ];
 
         // Batch commands
-        const batchPayload: Command[] = [
+        const batchPayload = [
           {
             method: "sudorule_remove_allow_command",
             params: allowCommandsParams,

@@ -67,9 +67,7 @@ const useDnsRecordsData = (
   React.useEffect(() => {
     if (dnsRecordData && !dnsRecordDetails.isFetching) {
       if (dnsRecordData.result !== null) {
-        const recordData: DNSRecord = apiToDnsRecord(
-          dnsRecordData.result.result
-        );
+        const recordData = apiToDnsRecord(dnsRecordData.result.result);
         setDnsRecord(recordData);
       } else {
         handleEmptyRecord();
@@ -83,7 +81,7 @@ const useDnsRecordsData = (
     }
   }, [hostData, hostDetails.isFetching]);
 
-  const settings: DnsRecordsSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isDnsRecordDataLoading || isHostDataLoading,
     isFetching: dnsRecordDetails.isFetching,
     modified,

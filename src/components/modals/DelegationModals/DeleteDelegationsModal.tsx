@@ -114,7 +114,7 @@ const DeleteDelegationsModal = (props: DeleteDelegationsModalProps) => {
 
             if (errors.length > 0) {
               for (const r of errors) {
-                const errorData: ErrorData = {
+                const errorData = {
                   code: String(r.error_code),
                   name: r.error_name,
                   error: r.error,
@@ -156,7 +156,7 @@ const DeleteDelegationsModal = (props: DeleteDelegationsModalProps) => {
       });
   };
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       key="delete-delegations"
       variant="danger"

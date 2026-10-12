@@ -32,10 +32,7 @@ import useUpdateRoute from "src/hooks/useUpdateRoute";
 import { SysAccount, Metadata } from "src/utils/datatypes/globalDataTypes";
 // RPC
 import { ErrorResult } from "src/services/rpc";
-import {
-  SysAccountModPayload,
-  useSaveSysAccountMutation,
-} from "src/services/rpcSystemAccounts";
+import { useSaveSysAccountMutation } from "src/services/rpcSystemAccounts";
 // Modals
 import DeleteSystemAccountsModal from "src/components/modals/SystemAccountModals/DeleteSystemAccountsModal";
 import EnableDisableSystemAccountsModal from "src/components/modals/SystemAccountModals/EnableDisableSystemAccountsModal";
@@ -79,7 +76,7 @@ const SystemAccountSettings = (props: PropsToSettings) => {
     event.preventDefault();
 
     const modifiedValues = props.modifiedValues() as Record<string, unknown>;
-    const sysAccountModPayload: SysAccountModPayload = {
+    const sysAccountModPayload = {
       uid: props.sysAccount.uid || "",
       description: modifiedValues?.description as string,
       userpassword: modifiedValues?.userpassword as string,

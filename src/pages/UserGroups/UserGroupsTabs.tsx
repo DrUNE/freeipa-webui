@@ -55,7 +55,7 @@ const UserGroupsTabs = ({ section }) => {
   React.useEffect(() => {
     setGroupId(cn);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "User groups",
         url: "/user-groups",

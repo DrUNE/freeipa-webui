@@ -46,7 +46,7 @@ export function partialConfigToConfig(partialConfig: Partial<Config>): Config {
 
 // Get empty User object initialized with default values
 export function createEmptyConfig(): Config {
-  const config: Config = {
+  const config = {
     dn: "",
     cn: "",
     ipamaxusernamelength: "",

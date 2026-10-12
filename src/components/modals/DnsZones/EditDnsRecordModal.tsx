@@ -253,7 +253,7 @@ const EditDnsRecordModal = (props: EditDnsRecordModalProps) => {
   const onSave = () => {
     setIsSaveButtonSpinning(true);
 
-    const payload: DynamicModDnsRecordPayload = buildPayload();
+    const payload = buildPayload();
 
     modDnsRecord(payload).then((response) => {
       if ("data" in response) {

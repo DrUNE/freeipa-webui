@@ -85,7 +85,7 @@ interface MemberTableProps {
 const STRING_ARRAY_TYPES = ["external", "sysaccount", "idoverrideuser"];
 
 // Track those types that don't have links
-const NO_LINK_TYPES: string[] = ["roles", "privileges", "permissions"];
+const NO_LINK_TYPES = ["roles", "privileges", "permissions"];
 
 // Body
 const TableBody = (props: {

@@ -8,7 +8,7 @@ interface MockReturn {
   data: { list: string[] } | { error: { message: string } };
 }
 
-const mockList: string[] = ["first", "second", "third"];
+const mockList = ["first", "second", "third"];
 
 /**
  * DropdownSearch.tsx

@@ -20,10 +20,7 @@ import { addAlert } from "src/store/Global/alerts-slice";
 import useUpdateRoute from "src/hooks/useUpdateRoute";
 import { Permission, Metadata } from "src/utils/datatypes/globalDataTypes";
 import { ErrorResult } from "src/services/rpc";
-import {
-  useSavePermissionMutation,
-  PermissionModPayload,
-} from "src/services/rpcPermissions";
+import { useSavePermissionMutation } from "src/services/rpcPermissions";
 import { useFindGroupsQuery } from "src/services/rpcUserGroups";
 
 interface PropsToSettings {
@@ -105,7 +102,7 @@ const PermissionsSettings = (props: PropsToSettings) => {
   const onSave = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const modifiedValues = props.modifiedValues();
-    const payload: PermissionModPayload = {
+    const payload = {
       ...modifiedValues,
       cn: props.permission.cn as string,
     };

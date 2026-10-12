@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, act, cleanup } from "@testing-library/react";
 import { describe, it, expect, afterEach } from "vitest";
 // Component
-import IpaTextContent, { IpaTextContentProps } from "./IpaTextContent";
+import IpaTextContent from "./IpaTextContent";
 import { BrowserRouter } from "react-router";
 
 describe("IpaTextContent Component", () => {
@@ -43,7 +43,7 @@ describe("IpaTextContent Component", () => {
   };
 
   const mockCn = "TEST VALUE";
-  const defaultProps: IpaTextContentProps = {
+  const defaultProps = {
     dataCy: "ipa-text-content",
     ariaLabel: "test",
     name: "cn",
@@ -66,7 +66,7 @@ describe("IpaTextContent Component", () => {
   });
 
   it("should render link properly", async () => {
-    const props: IpaTextContentProps = { ...defaultProps, linkTo: "test" };
+    const props = { ...defaultProps, linkTo: "test" };
     await act(async () => {
       render(
         <BrowserRouter>

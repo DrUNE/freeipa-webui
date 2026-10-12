@@ -529,7 +529,7 @@ const extendedApi = api.injectEndpoints({
         const uidsList = payload.uidsList;
         const noMembers = payload.noMembers;
 
-        const userShowCommands: Command[] = uidsList.map((uid) => ({
+        const userShowCommands = uidsList.map((uid) => ({
           method: "user_show",
           params: [[uid], { no_members: noMembers }],
         }));

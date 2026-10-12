@@ -22,7 +22,6 @@ import { useDnsConfigData } from "src/hooks/useDnsConfigData";
 import useContextualHelpTopic from "src/hooks/useContextualHelpTopic";
 // RPC
 import {
-  DnsGlobalConfigPayload,
   useDnsGlobalConfigModMutation,
   useDnsGlobalConfigUpdateSystemDnsRecordsMutation,
 } from "src/services/rpcDnsGlobalConfig";
@@ -40,7 +39,6 @@ import IpaCheckbox from "src/components/Form/IpaCheckbox";
 import IpaTextInput from "src/components/Form/IpaTextInput";
 import IpaTextboxList from "src/components/Form/IpaTextboxList";
 import IpaForwardPolicy from "src/components/Form/IpaForwardPolicy";
-import { ToolbarItem } from "src/components/layouts/ToolbarLayout";
 import KebabLayout from "src/components/layouts/KebabLayout";
 import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 
@@ -89,7 +87,7 @@ const DnsGlobalConfig = () => {
     setIsDataLoading(true);
     const modifiedValues = dnsConfigData.modifiedValues();
 
-    const payload: DnsGlobalConfigPayload = {
+    const payload = {
       idnsforwarders: modifiedValues.idnsforwarders,
       idnsforwardpolicy: modifiedValues.idnsforwardpolicy,
       idnsallowsyncptr: modifiedValues.idnsallowsyncptr,
@@ -180,7 +178,7 @@ const DnsGlobalConfig = () => {
   ];
 
   // Toolbar
-  const toolbarItems: ToolbarItem[] = [
+  const toolbarItems = [
     {
       key: 0,
       element: (

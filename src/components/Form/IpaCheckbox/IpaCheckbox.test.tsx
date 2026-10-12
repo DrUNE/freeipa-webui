@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { vi, describe, afterEach, it, expect } from "vitest";
 // Component
-import IpaCheckbox, { CheckboxOption } from "./IpaCheckbox";
+import IpaCheckbox from "./IpaCheckbox";
 // Utils
 import { updateIpaObject } from "src/utils/ipaObjectUtils";
 
@@ -51,7 +51,7 @@ describe("IpaCheckbox Component", () => {
     },
   };
 
-  const defaultProps: CheckboxOption = {
+  const defaultProps = {
     dataCy: "ipa-checkbox",
     name: "ipakrbokasdelegate2",
     ariaLabel: "ipakrbokasdelegate2",

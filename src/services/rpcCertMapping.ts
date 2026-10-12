@@ -101,7 +101,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataCertMap: Command = {
+        const payloadDataCertMap = {
           method: "certmaprule_find",
           params: [[searchValue], certMapIdsParams],
         };
@@ -195,7 +195,7 @@ const extendedApi = api.injectEndpoints({
      */
     matchCertificate: build.mutation<BatchRPCResponse, string>({
       query: (certificate) => {
-        const matchCertificateCommands: Command[] = [
+        const matchCertificateCommands = [
           {
             method: "certmap_match",
             params: [[certificate], {}],

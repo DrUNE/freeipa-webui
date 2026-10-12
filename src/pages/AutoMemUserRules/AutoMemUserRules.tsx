@@ -36,10 +36,7 @@ import TypeAheadSelect from "src/components/TypeAheadSelect";
 import useApiError from "src/hooks/useApiError";
 import GlobalErrors from "src/components/errors/GlobalErrors";
 // RPC
-import {
-  ChangeDefaultPayload,
-  useChangeDefaultGroupMutation,
-} from "src/services/rpcAutomember";
+import { useChangeDefaultGroupMutation } from "src/services/rpcAutomember";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 import useUpdateRoute from "src/hooks/useUpdateRoute";
@@ -174,7 +171,7 @@ const AutoMemUserRules = () => {
 
   // On select default group
   const onSelectDefaultGroup = (group: string) => {
-    const payload: ChangeDefaultPayload = {
+    const payload = {
       defaultGroup: group,
       type: "group",
     };

@@ -8,9 +8,7 @@ import {
 } from "@testing-library/react";
 import { describe, vi, it, expect, afterEach } from "vitest";
 // Component
-import IpaDropdownSearch, {
-  IPAParamDefinitionDropdown,
-} from "./IpaDropdownSearch";
+import IpaDropdownSearch from "./IpaDropdownSearch";
 
 describe("IpaDropdownSearch Component", () => {
   const mockOnchange = vi.fn();
@@ -84,7 +82,7 @@ describe("IpaDropdownSearch Component", () => {
     ipauserdefaultsubordinateid: false,
   };
 
-  const defaultProps: IPAParamDefinitionDropdown = {
+  const defaultProps = {
     dataCy: "ipa-dropdown-search",
     name: "ca_renewal_master_server",
     ariaLabel: "IPA CA renewal master",

@@ -25,7 +25,6 @@ import {
   useRemoveFromHostsManagedByMutation,
 } from "src/services/rpcHosts";
 import {
-  ServiceAddRemoveHostPayload,
   useAddServiceHostMutation,
   useRemoveServiceHostMutation,
 } from "src/services/rpcServices";
@@ -225,7 +224,7 @@ const ManagedByHosts = (props: ManagedByHostsProps) => {
         }
       );
     } else if (props.from === "service") {
-      const payload: ServiceAddRemoveHostPayload = {
+      const payload = {
         serviceId: props.id,
         hostsList: newHostNames,
       };
@@ -289,7 +288,7 @@ const ManagedByHosts = (props: ManagedByHostsProps) => {
         }
       );
     } else if (props.from === "service") {
-      const payload: ServiceAddRemoveHostPayload = {
+      const payload = {
         serviceId: props.id,
         hostsList: hostsSelected,
       };

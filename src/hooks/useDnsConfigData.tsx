@@ -47,7 +47,7 @@ const useDnsConfigData = (): DnsConfigSettingsData => {
       dnsGlobalConfigData.result !== null &&
       "result" in dnsGlobalConfigData.result
     ) {
-      const currentDnsConfig: DnsConfig = apiToDnsConfig(
+      const currentDnsConfig = apiToDnsConfig(
         dnsGlobalConfigData.result.result
       );
       setDnsConfig(currentDnsConfig);
@@ -55,7 +55,7 @@ const useDnsConfigData = (): DnsConfigSettingsData => {
     }
   }, [dnsGlobalConfigData, dnsGlobalConfigDetails.isFetching]);
 
-  const settings: DnsConfigSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isDnsGlobalConfigDataLoading,
     isFetching: dnsGlobalConfigDetails.isFetching,
     modified,

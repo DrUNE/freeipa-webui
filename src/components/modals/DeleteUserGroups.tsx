@@ -174,7 +174,7 @@ const DeleteUserGroups = (props: PropsToDeleteGroups) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       data-cy="modal-button-delete"
       key="delete-usergroups"
@@ -198,7 +198,7 @@ const DeleteUserGroups = (props: PropsToDeleteGroups) => {
     </Button>,
   ];
 
-  const modalDelete: React.JSX.Element = (
+  const modalDelete = (
     <>
       <ModalWithFormLayout
         dataCy="delete-user-groups-modal"

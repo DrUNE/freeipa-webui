@@ -59,7 +59,7 @@ const DelegationsTabs = ({ section }: DelegationsTabsProps) => {
   };
 
   React.useEffect(() => {
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Delegations",
         url: "/delegations",

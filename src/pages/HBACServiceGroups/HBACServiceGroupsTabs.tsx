@@ -46,7 +46,7 @@ const HBACServiceGroupsTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "HBAC service groups",
         url: "/hbac-service-groups",

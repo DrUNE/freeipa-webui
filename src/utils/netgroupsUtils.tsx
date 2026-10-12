@@ -33,7 +33,7 @@ export function partialNetgroupToNetgroup(
 
 // Get empty User object initialized with default values
 export function createEmptyNetgroup(): Netgroup {
-  const group: Netgroup = {
+  const group = {
     cn: "",
     nisdomainname: "",
     description: "",

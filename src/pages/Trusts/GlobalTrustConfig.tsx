@@ -19,10 +19,7 @@ import { toggleHelpPanel } from "src/store/Global/contextual-help-slice";
 import { useTrustsConfigData } from "src/hooks/useTrustsConfigData";
 import useContextualHelpTopic from "src/hooks/useContextualHelpTopic";
 // RPC
-import {
-  GlobalTrustConfigPayload,
-  useGlobalTrustConfigModMutation,
-} from "src/services/rpcTrusts";
+import { useGlobalTrustConfigModMutation } from "src/services/rpcTrusts";
 // Utils
 import { globalTrustConfigAsRecord } from "src/utils/trustsConfigUtils";
 // Icons
@@ -87,7 +84,7 @@ const GlobalTrustConfig = () => {
     const modifiedValues = trustsConfigData.modifiedValues();
 
     if (modifiedValues.ipantfallbackprimarygroup !== undefined) {
-      const payload: GlobalTrustConfigPayload = {
+      const payload = {
         ipantfallbackprimarygroup: modifiedValues.ipantfallbackprimarygroup,
       };
 

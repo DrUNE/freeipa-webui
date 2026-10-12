@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // PatternFly
 import {
   Button,
@@ -91,9 +91,7 @@ const AddIDOverrideGroupModal = (props: PropsToAddGroup) => {
   }, [props.show, props.groups]);
 
   // Refs
-  const loginRef = useRef<HTMLInputElement>(
-    null
-  ) as MutableRefObject<HTMLInputElement>;
+  const loginRef = useRef<HTMLInputElement>(null);
 
   // List of fields
   const fields = [

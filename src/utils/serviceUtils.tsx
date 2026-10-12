@@ -58,7 +58,7 @@ export function partialServiceToService(
 // Covert an partial Service object into a full Sservice object
 // (initializing the undefined params with default empty values)
 export function createEmptyService(): Service {
-  const service: Service = {
+  const service = {
     serviceType: "",
     dn: "",
     has_keytab: false,

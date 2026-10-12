@@ -1,7 +1,6 @@
 // RTK Query
 import {
   api,
-  Command,
   getCommand,
   FindRPCResponse,
   GenericPayload,
@@ -118,7 +117,7 @@ const extendedApi = api.injectEndpoints({
           .result as unknown as automemberType[];
         const automembersList: AutomemberEntry[] = [];
         automembersResult.map((automember) => {
-          const entryInfo: AutomemberEntry = {
+          const entryInfo = {
             automemberRule: automember.cn.toString(),
             description: automember.description
               ? automember.description[0]
@@ -181,7 +180,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataAutomembers: Command = {
+        const payloadDataAutomembers = {
           method: "automember_find",
           params: [[searchValue], automembersParams],
         };
@@ -216,7 +215,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersion,
         };
 
-        const payloadDataGroups: Command = {
+        const payloadDataGroups = {
           method: "group_find",
           params: [[searchValue], groupParams],
         };
@@ -343,7 +342,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataAutomembers: Command = {
+        const payloadDataAutomembers = {
           method: "automember_find",
           params: [[searchValue], automembersParams],
         };
@@ -378,7 +377,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersion,
         };
 
-        const payloadDataGroups: Command = {
+        const payloadDataGroups = {
           method: "hostgroup_find",
           params: [[searchValue], groupParams],
         };

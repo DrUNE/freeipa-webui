@@ -10,9 +10,7 @@ import { useOtpTokensSettingsData } from "src/hooks/useOtpTokensSettingsData";
 // Components
 import TitleLayout from "src/components/layouts/TitleLayout";
 import DataSpinner from "src/components/layouts/DataSpinner";
-import BreadCrumb, {
-  BreadCrumbItem,
-} from "src/components/layouts/BreadCrumb/BreadCrumb";
+import BreadCrumb from "src/components/layouts/BreadCrumb/BreadCrumb";
 import { IpatokenuniqueidParams, useSafeParams } from "src/utils/paramsUtils";
 import OtpTokensSettings from "./OtpTokensSettings";
 import OtpTokensManagedBy from "./OtpTokensManagedBy";
@@ -40,7 +38,7 @@ const OtpTokensTabs = ({ section }: { section: string }) => {
     }
   };
 
-  const breadcrumbItems: BreadCrumbItem[] = [
+  const breadcrumbItems = [
     {
       name: "Otp tokens",
       url: "/" + pathname,

@@ -56,17 +56,17 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const serviceShowCommand: Command = {
+        const serviceShowCommand = {
           method: "service_show",
           params: [[serviceId], service_params],
         };
 
-        const certFindCommand: Command = {
+        const certFindCommand = {
           method: "cert_find",
           params: [[], { service: serviceId, sizelimit: 0, all: true }],
         };
 
-        const batchPayload: Command[] = [serviceShowCommand, certFindCommand];
+        const batchPayload = [serviceShowCommand, certFindCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -224,7 +224,7 @@ const extendedApi = api.injectEndpoints({
      */
     getServicesInfoByUid: build.query<Service[], string[]>({
       query: (serviceIds) => {
-        const serviceShowCommands: Command[] = serviceIds.map((serviceId) => ({
+        const serviceShowCommands = serviceIds.map((serviceId) => ({
           method: "service_show",
           params: [[serviceId], { no_members: true }],
         }));

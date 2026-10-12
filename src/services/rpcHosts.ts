@@ -69,17 +69,17 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const hostShowCommand: Command = {
+        const hostShowCommand = {
           method: "host_show",
           params: [[hostId], host_params],
         };
 
-        const certFindCommand: Command = {
+        const certFindCommand = {
           method: "cert_find",
           params: [[], { host: hostId, sizelimit: 0, all: true }],
         };
 
-        const batchPayload: Command[] = [hostShowCommand, certFindCommand];
+        const batchPayload = [hostShowCommand, certFindCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -286,7 +286,7 @@ const extendedApi = api.injectEndpoints({
         const hostNames = payload.hostNamesList;
         const noMembers = payload.no_members || true;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const hostShowCommands: Command[] = hostNames.map((hostName) => ({
+        const hostShowCommands = hostNames.map((hostName) => ({
           method: "host_show",
           params: [[hostName], { no_members: noMembers }],
         }));

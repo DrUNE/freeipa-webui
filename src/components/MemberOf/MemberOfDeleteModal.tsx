@@ -30,7 +30,7 @@ const MemberOfDeleteModal = (props: React.PropsWithChildren<PropsToDelete>) => {
     onDelete();
   };
 
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       data-cy="modal-button-delete"
       key="delete-groups"

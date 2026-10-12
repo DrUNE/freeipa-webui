@@ -46,7 +46,7 @@ const useCertMapConfigData = (): CertMapConfigSettingsData => {
     }
   }, [certMapConfigData, certMapConfigDetails.isFetching]);
 
-  const settings: CertMapConfigSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isCertMapConfigDataLoading,
     isFetching: certMapConfigDetails.isFetching,
     modified,

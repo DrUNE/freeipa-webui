@@ -5,11 +5,7 @@ import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
-import {
-  DisableEnableTrustDomainPayload,
-  useEnableDisableTrustDomainsMutation,
-} from "src/services/rpcTrusts";
-import { BatchResult } from "src/services/rpc";
+import { useEnableDisableTrustDomainsMutation } from "src/services/rpcTrusts";
 // Components
 import ConfirmationModal from "src/components/modals/ConfirmationModal";
 
@@ -33,7 +29,7 @@ const EnableDisableTrustedDomainsModal = (
 
   // Enable/Disable operation
   const onEnableDisable = () => {
-    const payload: DisableEnableTrustDomainPayload = {
+    const payload = {
       trustId: props.trustId,
       domainNames: props.domainNames,
       operation: props.operation,
@@ -42,7 +38,7 @@ const EnableDisableTrustedDomainsModal = (
     enableDisableTrustDomains(payload)
       .then((response) => {
         if ("data" in response && response.data !== undefined) {
-          const results: BatchResult[] = response.data.result.results;
+          const results = response.data.result.results;
 
           results.forEach((result) => {
             if ("error" in result && result.error) {
@@ -81,7 +77,7 @@ const EnableDisableTrustedDomainsModal = (
     props.onClose();
   };
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-ok"
       key={props.operation + "-certmaprules"}

@@ -41,7 +41,7 @@ const useKrbTicketPolicyData = (): KrbTicketSettingsData => {
     }
   }, [krbTicketData, krbTicketDetails.isFetching]);
 
-  const settings: KrbTicketSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isKrbTicketDataLoading,
     isFetching: krbTicketDetails.isFetching,
     modified,

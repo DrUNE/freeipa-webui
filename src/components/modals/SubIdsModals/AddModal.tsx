@@ -2,9 +2,7 @@ import React from "react";
 // PatternFly
 import { Button } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import SimpleSelector from "src/components/layouts/SimpleSelector";
 // Data types
 import { SubId } from "src/utils/datatypes/globalDataTypes";
@@ -161,7 +159,7 @@ const AddModal = (props: PropsToAddModal) => {
   };
 
   // Fields
-  const fields: Field[] = [
+  const fields = [
     {
       id: "owner",
       name: "Owner",
@@ -183,7 +181,7 @@ const AddModal = (props: PropsToAddModal) => {
   ];
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

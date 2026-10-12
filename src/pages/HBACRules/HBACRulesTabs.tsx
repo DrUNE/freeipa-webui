@@ -33,7 +33,7 @@ const HBACRulesTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "HBAC rules",
         url: "/hbac-rules",

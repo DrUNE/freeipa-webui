@@ -10,7 +10,7 @@ import { useUserMetadataQuery } from "./services/rpcAuth";
 // Alerts
 import ManagedAlerts from "./components/ManagedAlerts";
 
-const App: React.FunctionComponent = () => {
+const App = () => {
   const { isFetching } = useUserMetadataQuery();
 
   if (isFetching) {

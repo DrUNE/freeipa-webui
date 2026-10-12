@@ -14,10 +14,7 @@ import { SerializedError } from "@reduxjs/toolkit";
 // Data types
 import { AutomemberEntry } from "src/utils/datatypes/globalDataTypes";
 // RPC
-import {
-  RemovePayload,
-  useDeleteFromAutomemberMutation,
-} from "src/services/rpcAutomember";
+import { useDeleteFromAutomemberMutation } from "src/services/rpcAutomember";
 
 interface ButtonsData {
   updateIsDeleteButtonDisabled: (value: boolean) => void;
@@ -88,7 +85,7 @@ const DeleteRule = (props: PropsToDeleteRule) => {
   const onDelete = () => {
     setBtnSpinning(true);
 
-    const deletePayload: RemovePayload = {
+    const deletePayload = {
       groups: rulesToDelete,
       type: props.ruleType,
     };
@@ -130,7 +127,7 @@ const DeleteRule = (props: PropsToDeleteRule) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       data-cy="modal-button-delete"
       key="delete-rules"

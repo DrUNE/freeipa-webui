@@ -47,7 +47,7 @@ export function partialSubIdToSubId(partialSudoRule: Partial<SubId>): SubId {
 
 // Get empty User object initialized with default values
 export function createEmptySubId(): SubId {
-  const subId: SubId = {
+  const subId = {
     ipauniqueid: "",
     ipaowner: "",
     ipasubgidnumber: "",

@@ -8,9 +8,7 @@ import { useDnsForwardZonesData } from "src/hooks/useDnsForwardZonesData";
 // Components
 import TitleLayout from "src/components/layouts/TitleLayout";
 import DataSpinner from "src/components/layouts/DataSpinner";
-import BreadCrumb, {
-  BreadCrumbItem,
-} from "src/components/layouts/BreadCrumb/BreadCrumb";
+import BreadCrumb from "src/components/layouts/BreadCrumb/BreadCrumb";
 import DnsForwardZonesSettings from "./DnsForwardZonesSettings";
 // React Router DOM
 import { useSafeParams } from "src/utils/paramsUtils";
@@ -36,7 +34,7 @@ const DnsForwardZonesTabs = ({ section }: { section: string }) => {
   } = useDnsForwardZonesData(idnsname);
 
   const pathname = "dns-forward-zones";
-  const breadcrumbItems: BreadCrumbItem[] = [
+  const breadcrumbItems = [
     {
       name: "DNS forward zones",
       url: "/" + pathname,

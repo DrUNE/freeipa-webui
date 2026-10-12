@@ -54,7 +54,7 @@ const HostGroupsTabs = ({ section }) => {
   React.useEffect(() => {
     setGroupId(cn);
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Host groups",
         url: "/host-groups",

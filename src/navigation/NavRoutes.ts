@@ -583,7 +583,7 @@ export const getBreadCrumbByPath = (
   getNavigationRoutes(configurationSettings).forEach((route) => {
     route.items.forEach((subRoute) => {
       if (path === subRoute.path) {
-        const item: BreadCrumbItem = {
+        const item = {
           name: subRoute.label,
           url: subRoute.path,
         };
@@ -593,11 +593,11 @@ export const getBreadCrumbByPath = (
       if (subRoute.items) {
         subRoute.items.forEach((subSubRoute) => {
           if (path === subSubRoute.path) {
-            const itemSubRoute: BreadCrumbItem = {
+            const itemSubRoute = {
               name: subRoute.label,
               url: subRoute.path,
             };
-            const itemSubSubRoute: BreadCrumbItem = {
+            const itemSubSubRoute = {
               name: subSubRoute.label,
               url: subSubRoute.path,
             };

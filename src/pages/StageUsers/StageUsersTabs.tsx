@@ -32,7 +32,7 @@ const StageUsersTabs = () => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Stage users",
         url: "/stage-users",

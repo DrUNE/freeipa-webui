@@ -51,9 +51,7 @@ const useDnsZonesData = (dnsZoneId: string): DnsZonesSettingsData => {
   React.useEffect(() => {
     if (dnsZoneData && !dnsZoneDetails.isFetching) {
       // Get the DNS zones data and convert it to the expected format
-      const zoneData: DNSZone = apiToDnsZone(
-        dnsZoneData.result.results[0].result
-      );
+      const zoneData = apiToDnsZone(dnsZoneData.result.results[0].result);
       setDnsZone(zoneData);
       setDnsZoneDup(zoneData);
 
@@ -74,7 +72,7 @@ const useDnsZonesData = (dnsZoneId: string): DnsZonesSettingsData => {
     }
   }, [dnsZoneData, dnsZoneDetails.isFetching]);
 
-  const settings: DnsZonesSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isDnsZoneDataLoading,
     isFetching: dnsZoneDetails.isFetching,
     modified,

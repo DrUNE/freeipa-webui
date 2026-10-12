@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   ErrorResult,
   getBatchCommand,
   getCommand,
@@ -59,7 +58,7 @@ const extendedApi = api.injectEndpoints({
           version: apiVersion,
         };
 
-        const findCommand: Command = {
+        const findCommand = {
           method: "delegation_find",
           params: [[searchValue], params],
         };
@@ -100,7 +99,7 @@ const extendedApi = api.injectEndpoints({
           );
         }
 
-        const showCommands: Command[] = ids.map((id) => ({
+        const showCommands = ids.map((id) => ({
           method: "delegation_show",
           params: [[id], {}],
         }));
@@ -183,7 +182,7 @@ const extendedApi = api.injectEndpoints({
 
     deleteDelegations: build.mutation<BatchRPCResponse, Delegation[]>({
       query: (delegations) => {
-        const commands: Command[] = delegations.map((del) => ({
+        const commands = delegations.map((del) => ({
           method: "delegation_del",
           params: [[del.aciname], {}],
         }));

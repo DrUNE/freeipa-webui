@@ -266,7 +266,7 @@ const DisableEnableHBACRules = (props: PropsToDisableEnableHBACRules) => {
   };
 
   // Set the Modal and Action buttons for 'Disable' option
-  const modalActionsDisable: React.JSX.Element[] = [
+  const modalActionsDisable = [
     <Button
       key="disable-hbacrules"
       variant="primary"
@@ -286,7 +286,7 @@ const DisableEnableHBACRules = (props: PropsToDisableEnableHBACRules) => {
     </Button>,
   ];
 
-  const modalDisable: React.JSX.Element = (
+  const modalDisable = (
     <ModalWithFormLayout
       dataCy="disable-hbac-rules-modal"
       variantType="medium"
@@ -308,7 +308,7 @@ const DisableEnableHBACRules = (props: PropsToDisableEnableHBACRules) => {
   );
 
   // Set the Modal and Action buttons for 'Enable' option
-  const modalActionsEnable: React.JSX.Element[] = [
+  const modalActionsEnable = [
     <Button
       key="enable-hbacrules"
       variant="primary"
@@ -328,7 +328,7 @@ const DisableEnableHBACRules = (props: PropsToDisableEnableHBACRules) => {
     </Button>,
   ];
 
-  const modalEnable: React.JSX.Element = (
+  const modalEnable = (
     <ModalWithFormLayout
       dataCy="enable-hbac-rules-modal"
       variantType="medium"

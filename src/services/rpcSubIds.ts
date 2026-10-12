@@ -58,7 +58,7 @@ const extendedApi = api.injectEndpoints({
       query: (payload) => {
         const subIdsList = payload.subIdsList;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const subIdsShowCommands: Command[] = subIdsList.map((subId) => ({
+        const subIdsShowCommands = subIdsList.map((subId) => ({
           method: "subid_show",
           params: [[subId], {}],
         }));
@@ -125,7 +125,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataSubids: Command = {
+        const payloadDataSubids = {
           method: "subid_find",
           params: [[searchValue], subidsParams],
         };

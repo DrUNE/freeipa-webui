@@ -51,12 +51,12 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const viewShowCommand: Command = {
+        const viewShowCommand = {
           method: "idview_show",
           params: [[viewId], view_params],
         };
 
-        const batchPayload: Command[] = [viewShowCommand];
+        const batchPayload = [viewShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },

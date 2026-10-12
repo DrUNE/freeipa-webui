@@ -329,7 +329,7 @@ const IpaCertificates = (props: PropsToIpaCertificates) => {
 
   // Get card body
   const getCardBody = (cert: Required<CertificateData>) => {
-    const tableElements: DictWithName[] = [
+    const tableElements = [
       {
         key: "Serial number",
         name: "cert-serial-num",
@@ -382,7 +382,7 @@ const IpaCertificates = (props: PropsToIpaCertificates) => {
 
   // On adding a certificate
   const onAddCertificate = () => {
-    const payload: string[] = [
+    const payload = [
       idParam,
       removeCertificateDelimiters(textAreaValue),
       props.objectType,

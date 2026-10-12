@@ -2,7 +2,6 @@ import React from "react";
 // PatternFly
 import { Badge, Tab, Tabs, TabTitleText } from "@patternfly/react-core";
 // Components
-import { BreadCrumbItem } from "src/components/layouts/BreadCrumb";
 import MemberOfRoles from "src/components/MemberOf/MemberOfRoles";
 // Layouts
 import TabLayout from "src/components/layouts/TabLayout";
@@ -34,7 +33,7 @@ const ServicesMemberOf = (props: PropsToServicesMemberOf) => {
       // Redirect to the main page
       navigate("/services");
     } else {
-      const currentPath: BreadCrumbItem[] = [
+      const currentPath = [
         {
           name: "Services",
           url: "../../services",

@@ -147,7 +147,7 @@ const useUserGroupsRulesData = ({
     }
   }, [defaultGroupError]);
 
-  const userGroupRulesData: UserGroupsRulesData = {
+  const userGroupRulesData = {
     isLoading:
       userGroupsLoading ||
       automembersLoading ||

@@ -47,7 +47,7 @@ interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   socialMediaLoginAriaLabel?: string;
 }
 
-export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
+export const LoginPage = ({
   children = null,
   className = "",
   brandImgSrc = "",

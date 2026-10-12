@@ -8,10 +8,7 @@ import InputRequiredText from "src/components/layouts/InputRequiredText";
 import { useAppDispatch } from "src/store/hooks";
 // RPC
 import { addAlert } from "src/store/Global/alerts-slice";
-import {
-  AutomountLocationAddPayload,
-  useAddAutomountLocationMutation,
-} from "src/services/rpcAutomountLocations";
+import { useAddAutomountLocationMutation } from "src/services/rpcAutomountLocations";
 // Errors
 import { SerializedError } from "@reduxjs/toolkit";
 
@@ -45,7 +42,7 @@ const AddAutomountLocationModal = (props: PropsToAddAutomountLocationModal) => {
   const onAddLocation = () => {
     setIsAddButtonSpinning(true);
 
-    const payload: AutomountLocationAddPayload = {
+    const payload = {
       locationName: locationName,
     };
 
@@ -112,7 +109,7 @@ const AddAutomountLocationModal = (props: PropsToAddAutomountLocationModal) => {
     },
   ];
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new-automount-location"

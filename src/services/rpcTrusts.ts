@@ -105,7 +105,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Prepare payload
-        const payloadDataTrusts: Command = {
+        const payloadDataTrusts = {
           method: "trust_find",
           params: [[searchValue], trustsIdsParams],
         };

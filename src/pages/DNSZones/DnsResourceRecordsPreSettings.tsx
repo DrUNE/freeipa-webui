@@ -33,7 +33,7 @@ const DnsResourceRecordsPreSettings = () => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "DNS zones",
         url: "/" + pathname,

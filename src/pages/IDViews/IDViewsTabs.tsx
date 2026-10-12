@@ -50,7 +50,7 @@ const IDViewsTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "ID views",
         url: "/id-views",

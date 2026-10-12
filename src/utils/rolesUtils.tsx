@@ -49,7 +49,7 @@ export function partialRoleToRole(partialRole: Partial<Role>): Role {
 }
 
 export function createEmptyRole(): Role {
-  const role: Role = {
+  const role = {
     cn: "",
     description: "",
     dn: "",

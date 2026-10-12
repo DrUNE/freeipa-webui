@@ -20,7 +20,7 @@ import {
   GroupAddPayload,
   useAddGroupMutation,
 } from "../../services/rpcUserGroups";
-import SimpleSelector, { SelectOptionProps } from "../layouts/SimpleSelector";
+import SimpleSelector from "../layouts/SimpleSelector";
 import { isEmptyOrNumber, EMPTY_OR_NUMBER_MESSAGE } from "src/utils/utils";
 interface PropsToAddGroup {
   show: boolean;
@@ -30,7 +30,7 @@ interface PropsToAddGroup {
   onRefresh?: () => void;
 }
 
-const groupTypeOptions: SelectOptionProps[] = [
+const groupTypeOptions = [
   {
     key: "posix",
     value: "posix",

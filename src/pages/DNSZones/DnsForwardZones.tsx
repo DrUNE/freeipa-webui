@@ -105,9 +105,7 @@ const DnsForwardZones = () => {
       data != undefined
     ) {
       const listResult = data.result.results;
-      const elementsList: DNSForwardZone[] = (
-        listResult as unknown as Record<string, unknown>[]
-      )
+      const elementsList = (listResult as unknown as Record<string, unknown>[])
         .filter((result) => "result" in result)
         .map((result) => apiToDnsForwardZone(result.result));
 

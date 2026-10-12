@@ -8,9 +8,7 @@ import { useAppDispatch } from "src/store/hooks";
 import { addAlert } from "src/store/Global/alerts-slice";
 // RPC
 import {
-  AddConditionPayload,
   Condition,
-  RemoveConditionPayload,
   useAutomemberAddConditionMutation,
   useAutomemberRemoveConditionMutation,
 } from "src/services/rpcAutomember";
@@ -19,7 +17,7 @@ import { Metadata } from "src/utils/datatypes/globalDataTypes";
 // Components
 import SettingsTableLayout from "../layouts/SettingsTableLayout";
 import InputRequiredText from "../layouts/InputRequiredText";
-import ModalWithFormLayout, { Field } from "../layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "../layouts/ModalWithFormLayout";
 import MemberOfDeleteModal from "../MemberOf/MemberOfDeleteModal";
 import DeletedElementsTable from "../tables/DeletedElementsTable";
 import SimpleSelector from "../layouts/SimpleSelector";
@@ -230,7 +228,7 @@ const InclusiveExclusiveSection = (props: PropsToInclusiveExclusiveSection) => {
   // On add
   const onAddOption = () => {
     setSpinningOnAdd(true);
-    const payload: AddConditionPayload = {
+    const payload = {
       automemberId: props.entityId,
       automemberType: props.automemberType,
       conditionType: props.conditionType,
@@ -267,7 +265,7 @@ const InclusiveExclusiveSection = (props: PropsToInclusiveExclusiveSection) => {
     });
   };
 
-  const addModalFields: Field[] = [
+  const addModalFields = [
     {
       id: "attribute",
       name: "Attribute",
@@ -300,7 +298,7 @@ const InclusiveExclusiveSection = (props: PropsToInclusiveExclusiveSection) => {
     },
   ];
 
-  const addModalActions: React.JSX.Element[] = [
+  const addModalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-inclusive"
@@ -332,7 +330,7 @@ const InclusiveExclusiveSection = (props: PropsToInclusiveExclusiveSection) => {
 
   const onDeleteOptions = () => {
     setSpinningOnDelete(true);
-    const payload: RemoveConditionPayload = {
+    const payload = {
       automemberId: props.entityId,
       automemberType: props.automemberType,
       conditionType: props.conditionType,

@@ -2,16 +2,11 @@ import React from "react";
 // PatternFly
 import { Button, TextArea, TextInput } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import TextInputList from "src/components/Form/TextInputList";
 import CustomTooltip from "src/components/layouts/CustomTooltip";
 // RPC
-import {
-  CertMapRuleAddPayload,
-  useCertMapRuleAddMutation,
-} from "src/services/rpcCertMapping";
+import { useCertMapRuleAddMutation } from "src/services/rpcCertMapping";
 // Redux
 import { useAppDispatch } from "src/store/hooks";
 // Hooks
@@ -71,7 +66,7 @@ const AddRuleModal = (props: PropsToAddRuleModal) => {
   const onAddRule = () => {
     setIsAddButtonSpinning(true);
 
-    const payload: CertMapRuleAddPayload = {
+    const payload = {
       ruleId: ruleName,
       description: description,
       ipacertmapmaprule: mappingRule,
@@ -121,7 +116,7 @@ const AddRuleModal = (props: PropsToAddRuleModal) => {
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "rule-name",
       name: "Rule name",
@@ -233,7 +228,7 @@ const AddRuleModal = (props: PropsToAddRuleModal) => {
   ];
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new"

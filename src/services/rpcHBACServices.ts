@@ -94,12 +94,12 @@ const extendedApi = api.injectEndpoints({
           all: true,
           rights: true,
         };
-        const srvShowCommand: Command = {
+        const srvShowCommand = {
           method: "hbacsvc_show",
           params: [[srvId], rule_params],
         };
 
-        const batchPayload: Command[] = [srvShowCommand];
+        const batchPayload = [srvShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -140,7 +140,7 @@ const extendedApi = api.injectEndpoints({
         const names = payload.serviceNamesList;
         const noMembers = payload.no_members || true;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const showCommands: Command[] = names.map((name) => ({
+        const showCommands = names.map((name) => ({
           method: "hbacsvc_show",
           params: [[name], { no_members: noMembers }],
         }));

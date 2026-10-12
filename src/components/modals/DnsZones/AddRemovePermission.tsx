@@ -67,7 +67,7 @@ const AddRemovePermission = (props: AddRemovePermissionProps) => {
     });
   };
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-ok"
       key={"delete-" + props.dnsZoneId}

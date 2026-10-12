@@ -21,10 +21,7 @@ import { addAlert } from "src/store/Global/alerts-slice";
 // Icons
 import { OutlinedQuestionCircleIcon } from "@patternfly/react-icons";
 // RPC
-import {
-  useModDnsRecordMutation,
-  ModDnsRecordPayload,
-} from "src/services/rpcDnsZones";
+import { useModDnsRecordMutation } from "src/services/rpcDnsZones";
 // Utils
 import { dnsRecordAsRecord } from "src/utils/dnsRecordUtils";
 // Components
@@ -99,7 +96,7 @@ const DnsResourceRecordsSettings = (props: DnsResourceRecordsSettingsProps) => {
     event.preventDefault();
     const modifiedValues = props.modifiedValues();
 
-    const payload: ModDnsRecordPayload = {
+    const payload = {
       dnsZoneId: props.idnsname as string,
       recordName: props.recordName as string,
       dnsttl: modifiedValues.dnsttl as number,

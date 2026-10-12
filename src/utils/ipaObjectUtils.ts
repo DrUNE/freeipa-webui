@@ -72,9 +72,7 @@ export function isWritable(
     return true; // assume writable
   }
 
-  const aci: Record<string, string> = ipaObject[
-    "attributelevelrights"
-  ] as Record<string, string>;
+  const aci = ipaObject["attributelevelrights"] as Record<string, string>;
   if (aci) {
     const paramWritable = isFieldWritable(aci, paramMetadata.name);
     const allWritable = isFieldWritable(aci, "*");

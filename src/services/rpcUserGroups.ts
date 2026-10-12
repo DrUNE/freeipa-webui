@@ -71,16 +71,16 @@ const extendedApi = api.injectEndpoints({
           rights: true,
         };
 
-        const groupShowCommand: Command = {
+        const groupShowCommand = {
           method: "group_show",
           params: [[groupId], group_params],
         };
 
-        const pwpolicyShowCommand: Command = {
+        const pwpolicyShowCommand = {
           method: "pwpolicy_show",
           params: [[], { cn: groupId, all: true, rights: true }],
         };
-        const batchPayload: Command[] = [groupShowCommand, pwpolicyShowCommand];
+        const batchPayload = [groupShowCommand, pwpolicyShowCommand];
 
         return getBatchCommand(batchPayload, API_VERSION_BACKUP);
       },
@@ -273,7 +273,7 @@ const extendedApi = api.injectEndpoints({
         const groupNames = payload.groupNamesList;
         const noMembers = payload.no_members || true;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const groupShowCommands: Command[] = groupNames.map((groupName) => ({
+        const groupShowCommands = groupNames.map((groupName) => ({
           method: "group_show",
           params: [[groupName], { no_members: noMembers }],
         }));

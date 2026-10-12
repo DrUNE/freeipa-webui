@@ -19,10 +19,7 @@ import useUpdateRoute from "src/hooks/useUpdateRoute";
 import useContextualHelpTopic from "src/hooks/useContextualHelpTopic";
 import { toggleHelpPanel } from "src/store/Global/contextual-help-slice";
 // RPC
-import {
-  CertMapConfigPayload,
-  useCertMapConfigModMutation,
-} from "src/services/rpcCertMapping";
+import { useCertMapConfigModMutation } from "src/services/rpcCertMapping";
 // Utils
 import { certMapConfigAsRecord } from "src/utils/certMappingUtils";
 // Icons
@@ -78,7 +75,7 @@ const CertificateMappingGlobalConfig = () => {
     setIsDataLoading(true);
     const modifiedValues = certMapConfigData.modifiedValues();
 
-    const payload: CertMapConfigPayload = {
+    const payload = {
       ipacertmappromptusername:
         modifiedValues.ipacertmappromptusername as boolean,
     };

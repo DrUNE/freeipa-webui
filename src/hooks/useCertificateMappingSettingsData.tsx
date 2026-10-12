@@ -49,7 +49,7 @@ const useCertificateMappingSettingsData = (
     }
   }, [certMappingData, certMappingDetails.isFetching]);
 
-  const settings: CertMappingSettingsData = {
+  const settings = {
     isLoading: metadataLoading || isCertMappingDataLoading,
     isFetching: certMappingDetails.isFetching,
     modified,

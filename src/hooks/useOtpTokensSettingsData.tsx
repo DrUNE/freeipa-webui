@@ -50,9 +50,7 @@ const useOtpTokensSettingsData = (
   React.useEffect(() => {
     if (otpTokenData && !otpTokenQuery.isFetching) {
       if (otpTokenData.result?.result) {
-        const otpTokenResult: OtpToken = apiToOtpToken(
-          otpTokenData.result.result
-        );
+        const otpTokenResult = apiToOtpToken(otpTokenData.result.result);
         setOtpToken(otpTokenResult);
         setOriginalOtpToken(otpTokenResult);
       }

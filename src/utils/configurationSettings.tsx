@@ -19,7 +19,7 @@ export interface ConfigurationSettings {
 const useConfigurationSettings = () => {
   const dnsIsEnabled = useAppSelector((state) => state.global.dnsIsEnabled);
 
-  const configurationSettings: ConfigurationSettings = React.useMemo(
+  const configurationSettings = React.useMemo(
     () => ({
       dnsIsEnabled: dnsIsEnabled,
       // ... other configuration settings here

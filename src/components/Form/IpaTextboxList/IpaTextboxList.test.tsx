@@ -2,15 +2,14 @@ import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { describe, it, expect, vi, afterEach } from "vitest";
 // Component
-import IpaTextboxList, { PropsToIpaTextboxList } from "./IpaTextboxList";
+import IpaTextboxList from "./IpaTextboxList";
 // Data types
-import { Metadata } from "src/utils/datatypes/globalDataTypes";
 
 describe("IpaTextboxList Component", () => {
   const mockOnChange = vi.fn();
 
   // Minimal mock metadata with the object and param definition
-  const mockMetadata: Metadata = {
+  const mockMetadata = {
     objects: {
       testobject: {
         name: "testobject",
@@ -44,7 +43,7 @@ describe("IpaTextboxList Component", () => {
     },
   };
 
-  const defaultProps: PropsToIpaTextboxList = {
+  const defaultProps = {
     dataCy: "ipa-textbox-list",
     ipaObject: {},
     onChange: mockOnChange,
@@ -95,7 +94,7 @@ describe("IpaTextboxList Component", () => {
       return value.match(mac_regex) !== null ? true : false;
     });
 
-    const props: PropsToIpaTextboxList = {
+    const props = {
       ...defaultProps,
       validator: mockValidator,
     };

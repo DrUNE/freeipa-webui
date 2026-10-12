@@ -44,7 +44,7 @@ export function partialAutomemberToAutomember(
 
 // Get empty User object initialized with default values
 export function createEmptyAutomember(): Automember {
-  const automember: Automember = {
+  const automember = {
     cn: "",
     description: "",
     automemberdefaultgroup: "",

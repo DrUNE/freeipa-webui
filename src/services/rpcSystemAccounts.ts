@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   getBatchCommand,
   getCommand,
   BatchRPCResponse,
@@ -104,7 +103,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Step 1: Find system account IDs
-        const findCommand: Command = {
+        const findCommand = {
           method: "sysaccount_find",
           params: [[searchValue], params],
         };
@@ -140,7 +139,7 @@ const extendedApi = api.injectEndpoints({
           return { data: { sysAccounts: [], totalCount } };
         }
 
-        const showCommands: Command[] = ids.map((id) => ({
+        const showCommands = ids.map((id) => ({
           method: "sysaccount_show",
           params: [[id], { no_members: true }],
         }));
@@ -168,7 +167,7 @@ const extendedApi = api.injectEndpoints({
         const results = batchResponse.result.results as unknown as {
           result: Record<string, unknown>;
         }[];
-        const sysAccounts: SysAccount[] = results
+        const sysAccounts = results
           .filter((entry) => entry.result)
           .map((entry) => apiToSysAccount(entry.result));
 
@@ -209,7 +208,7 @@ const extendedApi = api.injectEndpoints({
      */
     deleteSysAccounts: build.mutation<BatchRPCResponse, SysAccount[]>({
       query: (sysAccounts) => {
-        const commands: Command[] = sysAccounts.map((account) => ({
+        const commands = sysAccounts.map((account) => ({
           method: "sysaccount_del",
           params: [[account.uid], {}],
         }));
@@ -223,7 +222,7 @@ const extendedApi = api.injectEndpoints({
      */
     sysaccountEnable: build.mutation<BatchRPCResponse, string[]>({
       query: (uids) => {
-        const commands: Command[] = uids.map((uid) => ({
+        const commands = uids.map((uid) => ({
           method: "sysaccount_enable",
           params: [[uid], {}],
         }));
@@ -237,7 +236,7 @@ const extendedApi = api.injectEndpoints({
      */
     sysaccountDisable: build.mutation<BatchRPCResponse, string[]>({
       query: (uids) => {
-        const commands: Command[] = uids.map((uid) => ({
+        const commands = uids.map((uid) => ({
           method: "sysaccount_disable",
           params: [[uid], {}],
         }));
@@ -254,7 +253,7 @@ const extendedApi = api.injectEndpoints({
         const uids = payload.uidsList;
         const noMembers = payload.no_members || false;
         const apiVersion = payload.version || API_VERSION_BACKUP;
-        const showCommands: Command[] = uids.map((uid) => ({
+        const showCommands = uids.map((uid) => ({
           method: "sysaccount_show",
           params: [[uid], { no_members: noMembers }],
         }));

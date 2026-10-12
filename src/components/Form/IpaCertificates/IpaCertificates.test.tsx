@@ -4,10 +4,7 @@ import { afterEach, describe, expect, it, Mock, vi } from "vitest";
 // Component
 import IpaCertificates, { PropsToIpaCertificates } from "./IpaCertificates";
 // Utils
-import {
-  Certificate,
-  CertificateAuthority,
-} from "src/utils/datatypes/globalDataTypes";
+import { CertificateAuthority } from "src/utils/datatypes/globalDataTypes";
 import { parseDn } from "src/utils/utils";
 // Redux
 import { renderWithAlerts } from "src/utils/testUtils";
@@ -108,7 +105,7 @@ describe("IpaCertificates Component", () => {
     },
   };
 
-  const mockCertificate: Certificate = {
+  const mockCertificate = {
     serial_number: "722856757516404880666860043356108376880111652886",
     certificate:
       "MIIF7zCCA9egAwIBAgIUfp4En0keunisN1QSDGncxFjbkBYwDQYJKoZIhvcNAQELBQAwgYYxCzAJBgNVBAYTAlhYMRIwEAYDVQQIDAlTdGF0ZU5hbWUxETAPBgNVBAcMCENpdHlOYW1lMRQwEgYDVQQKDAtDb21wYW55TmFtZTEbMBkGA1UECwwSQ29tcGFueVNlY3Rpb25OYW1lMR0wGwYDVQQDDBRDb21tb25OYW1lT3JIb3N0bmFtZTAeFw0yNTAzMDcxMDIxMTlaFw0zNTAzMDUxMDIxMTlaMIGGMQswCQYDVQQGEwJYWDESMBAGA1UECAwJU3RhdGVOYW1lMREwDwYDVQQHDAhDaXR5TmFtZTEUMBIGA1UECgwLQ29tcGFueU5hbWUxGzAZBgNVBAsMEkNvbXBhbnlTZWN0aW9uTmFtZTEdMBsGA1UEAwwUQ29tbW9uTmFtZU9ySG9zdG5hbWUwggIiMA0GCSqGSIb3DQEBAQUA",
@@ -216,7 +213,7 @@ describe("IpaCertificates Component", () => {
     const ISSUER_DN = parseDn(mockCertificate.issuer);
     const SUBJECT_DN = parseDn(mockCertificate.subject);
 
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       certificates: [mockCertificate],
@@ -500,7 +497,7 @@ describe("IpaCertificates Component", () => {
 
   it("revokes certificate on revoke-able certificate", async () => {
     const certificate = { ...mockCertificate, cacn: "ipa" };
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       // Mock issued by ipa
@@ -585,7 +582,7 @@ describe("IpaCertificates Component", () => {
 
   it("does not revoke certificate when error is encountered after clicking Revoke", async () => {
     const certificate = { ...mockCertificate, cacn: "ipa" };
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       // Mock issued by ipa
@@ -661,7 +658,7 @@ describe("IpaCertificates Component", () => {
       cacn: "ipa",
       revocation_reason: 6,
     };
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       // Mock issued by ipa
@@ -753,7 +750,7 @@ describe("IpaCertificates Component", () => {
       cacn: "ipa",
       revocation_reason: 6,
     };
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       // Mock issued by ipa
@@ -830,7 +827,7 @@ describe("IpaCertificates Component", () => {
   it("deletes certificate when clicking Delete", async () => {
     const SUBJECT_DN = parseDn(mockCertificate.subject);
 
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       certificates: [mockCertificate],
@@ -901,7 +898,7 @@ describe("IpaCertificates Component", () => {
   it("does not delete certificate when error is encountered after clicking Delete", async () => {
     const SUBJECT_DN = parseDn(mockCertificate.subject);
 
-    const props: PropsToIpaCertificates = {
+    const props = {
       ...defaultProps,
       ipaObject: mockIpaObject,
       certificates: [mockCertificate],

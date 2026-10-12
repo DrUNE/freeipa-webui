@@ -17,9 +17,7 @@ import { useAppDispatch } from "src/store/hooks";
 // Hooks
 import { addAlert } from "src/store/Global/alerts-slice";
 // Modals
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import QrCodeModal from "./QrCodeModal";
 // Components
 import DateTimeSelector from "src/components/Form/DateTimeSelector";
@@ -28,7 +26,6 @@ import { NO_SELECTION_OPTION } from "src/utils/constUtils";
 // RTK
 import { ErrorResult } from "src/services/rpc";
 import {
-  AddOtpTokenPayload,
   useAddOtpTokenMutation,
   useGetActiveUsersQuery,
 } from "src/services/rpcUsers";
@@ -132,7 +129,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     }
   };
 
-  const typeComponent: React.JSX.Element = (
+  const typeComponent = (
     <Flex>
       <FlexItem>
         <Radio
@@ -157,7 +154,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     </Flex>
   );
 
-  const algorithmComponent: React.JSX.Element = (
+  const algorithmComponent = (
     <Flex>
       <FlexItem>
         <Radio
@@ -210,7 +207,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     </Flex>
   );
 
-  const digitsComponent: React.JSX.Element = (
+  const digitsComponent = (
     <Flex>
       <FlexItem>
         <Radio
@@ -288,7 +285,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     </MenuToggle>
   );
 
-  const ownerComponent: React.JSX.Element = (
+  const ownerComponent = (
     <Select
       data-cy="modal-select-owner"
       id={"owner"}
@@ -324,7 +321,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
   );
 
   // List of fields
-  const fields: Field[] = [
+  const fields = [
     {
       id: "radio-buttons-type",
       name: "type",
@@ -536,7 +533,7 @@ const AddOtpToken = (props: PropsToAddOtpToken) => {
     // Get updated values as params
     const params = getModifiedValues();
     // Payload
-    const payload: AddOtpTokenPayload = {
+    const payload = {
       ipatokenuniqueid: uniqueId,
       type: tokenType,
       ...params,

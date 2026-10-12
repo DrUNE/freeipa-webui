@@ -273,7 +273,7 @@ const DisableEnableUsers = (props: PropsToDisableEnableUsers) => {
   };
 
   // Set the Modal and Action buttons for 'Disable' option
-  const modalActionsDisable: React.JSX.Element[] = [
+  const modalActionsDisable = [
     <Button
       key="disable-users"
       variant="primary"
@@ -293,7 +293,7 @@ const DisableEnableUsers = (props: PropsToDisableEnableUsers) => {
     </Button>,
   ];
 
-  const modalDisable: React.JSX.Element = (
+  const modalDisable = (
     <ModalWithFormLayout
       dataCy="disable-users-modal"
       variantType="medium"
@@ -315,7 +315,7 @@ const DisableEnableUsers = (props: PropsToDisableEnableUsers) => {
   );
 
   // Set the Modal and Action buttons for 'Enable' option
-  const modalActionsEnable: React.JSX.Element[] = [
+  const modalActionsEnable = [
     <Button
       key="enable-users"
       variant="primary"
@@ -335,7 +335,7 @@ const DisableEnableUsers = (props: PropsToDisableEnableUsers) => {
     </Button>,
   ];
 
-  const modalEnable: React.JSX.Element = (
+  const modalEnable = (
     <ModalWithFormLayout
       dataCy="enable-users-modal"
       variantType="medium"

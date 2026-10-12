@@ -167,7 +167,7 @@ const DeleteModal = (props: PropsToDelete) => {
   };
 
   // Set the Modal and Action buttons for 'Delete' option
-  const modalActionsDelete: React.JSX.Element[] = [
+  const modalActionsDelete = [
     <Button
       data-cy="modal-button-delete"
       key="delete-pwpolicies"
@@ -191,7 +191,7 @@ const DeleteModal = (props: PropsToDelete) => {
     </Button>,
   ];
 
-  const modalDelete: React.JSX.Element = (
+  const modalDelete = (
     <>
       <ModalWithFormLayout
         dataCy="delete-pwpolicy-modal"

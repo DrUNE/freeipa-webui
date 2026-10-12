@@ -115,7 +115,7 @@ const searchOverrideEntriesQueryFn = async (
     ids.push(ipaanchoruuid[0] as string);
   }
 
-  const payloadDataBatch: Command[] = ids.map((id) => ({
+  const payloadDataBatch = ids.map((id) => ({
     method: entryType + "_show",
     params: [[idView, id], {}],
   }));
@@ -314,7 +314,7 @@ const extendedApi = api.injectEndpoints({
       { idView: string; searchValue: string }
     >({
       query: ({ idView, searchValue }) => {
-        const findCmd: Command = {
+        const findCmd = {
           method: "idoverrideuser_find",
           params: [
             [idView, searchValue],

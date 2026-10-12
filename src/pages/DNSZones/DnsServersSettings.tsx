@@ -62,7 +62,7 @@ const DnsServersSettings = (props: DnsServersSettingsProps) => {
   const [isDataLoading, setIsDataLoading] = React.useState(false);
 
   // Computed state
-  const dnsServerId: string = props.dnsServer.idnsserverid || "";
+  const dnsServerId = props.dnsServer.idnsserverid || "";
 
   // Get 'ipaObject' and 'recordOnChange' to use in 'IpaTextInput'
   const { ipaObject, recordOnChange } = dnsServerAsRecord(

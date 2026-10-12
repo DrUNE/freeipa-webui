@@ -29,7 +29,7 @@ export function partialViewToView(partialView: Partial<IDView>): IDView {
 
 // Get empty User object initialized with default values
 export function createEmptyView(): IDView {
-  const view: IDView = {
+  const view = {
     dn: "",
     cn: "",
     description: "",

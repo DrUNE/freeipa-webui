@@ -7,9 +7,7 @@ import {
   cleanup,
 } from "@testing-library/react";
 import { vi, describe, afterEach, it, expect } from "vitest";
-import IpaSimpleSelector, {
-  IPAParamDefinitionSimpleSelector,
-} from "./IpaSimpleSelector";
+import IpaSimpleSelector from "./IpaSimpleSelector";
 
 describe("IpaSimpleSelector Component", () => {
   const mockOnChange = vi.fn();
@@ -52,7 +50,7 @@ describe("IpaSimpleSelector Component", () => {
     },
   };
 
-  const defaultProps: IPAParamDefinitionSimpleSelector = {
+  const defaultProps = {
     id: "ipapermbindruletype",
     dataCy: "ipa-simple-selector",
     name: "ipapermbindruletype",

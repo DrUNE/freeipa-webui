@@ -2,9 +2,7 @@ import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { vi, describe, afterEach, it, expect } from "vitest";
 // Component
-import IpaNumberInput, {
-  IPAParamDefinitionNumberInput,
-} from "./IpaNumberInput";
+import IpaNumberInput from "./IpaNumberInput";
 
 // Mock of util function: updateIpaObject
 vi.mock("src/utils/ipaObjectUtils", async () => ({
@@ -53,7 +51,7 @@ describe("IpaNumberInput Component", () => {
     },
   };
 
-  const defaultProps: IPAParamDefinitionNumberInput = {
+  const defaultProps = {
     dataCy: "ipa-number-input",
     ariaLabel: "sudoorder2",
     ipaObject: { sudoorder2: "" }, // Default value

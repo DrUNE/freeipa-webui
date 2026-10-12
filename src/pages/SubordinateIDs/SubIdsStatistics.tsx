@@ -10,7 +10,6 @@ import {
 import TableLayout from "src/components/layouts/TableLayout";
 import { Td, Th, Tr } from "@patternfly/react-table";
 // components
-import { ToolbarItem } from "src/components/layouts/ToolbarLayout";
 import PageLayout from "src/components/layouts/PageLayout";
 import HelpTextWithIconLayout from "src/components/layouts/HelpTextWithIconLayout";
 
@@ -74,7 +73,7 @@ const SubIdsStatistics = () => {
   };
 
   // List of Toolbar items
-  const toolbarItems: ToolbarItem[] = [
+  const toolbarItems = [
     {
       key: 0,
       element: (

@@ -9,9 +9,7 @@ import {
   TextInput,
 } from "@patternfly/react-core";
 // Components
-import ModalWithFormLayout, {
-  Field,
-} from "src/components/layouts/ModalWithFormLayout";
+import ModalWithFormLayout from "src/components/layouts/ModalWithFormLayout";
 import CustomTooltip from "src/components/layouts/CustomTooltip";
 import InputRequiredText from "src/components/layouts/InputRequiredText";
 import NumberSelector from "src/components/Form/NumberInput";
@@ -182,7 +180,7 @@ const AddTrustModal = (props: PropsToAddTrustModal) => {
     props.onClose();
   };
 
-  const fields: Field[] = [
+  const fields = [
     {
       id: "domain-name",
       name: "Domain name",
@@ -465,7 +463,7 @@ const AddTrustModal = (props: PropsToAddTrustModal) => {
     isPreSharedPwdDisabled;
 
   // Actions
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy={"modal-button-add"}
       key="add-new"

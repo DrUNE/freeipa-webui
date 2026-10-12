@@ -1,6 +1,5 @@
 import {
   api,
-  Command,
   getBatchCommand,
   getCommand,
   BatchRPCResponse,
@@ -84,7 +83,7 @@ const extendedApi = api.injectEndpoints({
         };
 
         // Step 1: Find permission IDs
-        const findCommand: Command = {
+        const findCommand = {
           method: "permission_find",
           params: [[searchValue], params],
         };
@@ -104,7 +103,7 @@ const extendedApi = api.injectEndpoints({
         }
 
         // Step 2: Batch show for each permission
-        const showCommands: Command[] = ids.map((id) => ({
+        const showCommands = ids.map((id) => ({
           method: "permission_show",
           params: [[id], { no_members: true }],
         }));
@@ -166,7 +165,7 @@ const extendedApi = api.injectEndpoints({
      */
     deletePermissions: build.mutation<BatchRPCResponse, Permission[]>({
       query: (permissions) => {
-        const commands: Command[] = permissions.map((permission) => ({
+        const commands = permissions.map((permission) => ({
           method: "permission_del",
           params: [[permission.cn], {}],
         }));

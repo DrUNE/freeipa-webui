@@ -19,7 +19,6 @@ import { paginate } from "src/utils/utils";
 // RPC
 import { ErrorResult } from "src/services/rpc";
 import {
-  RoleMemberPayload,
   useAddAsMemberRoleMutation,
   useRemoveAsMemberRoleMutation,
 } from "src/services/rpcRoles";
@@ -88,7 +87,7 @@ const MembersSystemAccount = (props: PropsToMembersSystemAccount) => {
   const availableItems = useMemo<AvailableItems[]>(() => {
     if (sysaccountsQuery.data && !sysaccountsQuery.isFetching) {
       const sysaccounts = sysaccountsQuery.data;
-      const items: AvailableItems[] = sysaccounts.map((sa) => ({
+      const items = sysaccounts.map((sa) => ({
         key: sa.uid,
         title: sa.uid + (sa.description ? ` (${sa.description})` : ""),
       }));
@@ -111,7 +110,7 @@ const MembersSystemAccount = (props: PropsToMembersSystemAccount) => {
       return;
     }
 
-    const payload: RoleMemberPayload = {
+    const payload = {
       entryName: props.id,
       entityType: "sysaccount",
       idsToAdd: newSysaccountNames,
@@ -146,7 +145,7 @@ const MembersSystemAccount = (props: PropsToMembersSystemAccount) => {
   };
 
   const onDeleteSystemAccount = () => {
-    const payload: RoleMemberPayload = {
+    const payload = {
       entryName: props.id,
       entityType: "sysaccount",
       idsToAdd: selectedItems,

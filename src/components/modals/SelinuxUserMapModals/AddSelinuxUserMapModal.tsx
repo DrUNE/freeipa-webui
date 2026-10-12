@@ -8,10 +8,7 @@ import InputWithValidation from "src/components/layouts/InputWithValidation";
 import { useAppDispatch } from "src/store/hooks";
 // RPC
 import { addAlert } from "src/store/Global/alerts-slice";
-import {
-  SelinuxUserMapAddPayload,
-  useAddSelinuxUserMapMutation,
-} from "src/services/rpcSelinuxUserMaps";
+import { useAddSelinuxUserMapMutation } from "src/services/rpcSelinuxUserMaps";
 // Errors
 import { SerializedError } from "@reduxjs/toolkit";
 
@@ -55,7 +52,7 @@ const AddSelinuxUserMapModal = (props: PropsToAddSelinuxUserMapModal) => {
   const onAdd = () => {
     setIsAddButtonSpinning(true);
 
-    const payload: SelinuxUserMapAddPayload = {
+    const payload = {
       cn,
       ipaselinuxuser,
     };
@@ -141,7 +138,7 @@ const AddSelinuxUserMapModal = (props: PropsToAddSelinuxUserMapModal) => {
     },
   ];
 
-  const modalActions: React.JSX.Element[] = [
+  const modalActions = [
     <Button
       data-cy="modal-button-add"
       key="add-new-selinux-user-map"

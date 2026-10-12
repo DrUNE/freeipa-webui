@@ -43,7 +43,7 @@ const SudoRulesTabs = ({ section }) => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Sudo rules",
         url: "/sudo-rules",

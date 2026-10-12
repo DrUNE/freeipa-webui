@@ -33,7 +33,7 @@ const PreservedUsersTabs = () => {
 
   React.useEffect(() => {
     // Update breadcrumb route
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Preserved users",
         url: "/preserved-users",

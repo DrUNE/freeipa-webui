@@ -74,7 +74,7 @@ const PrivilegesTabs = ({ section }: PrivilegesTabsProps) => {
   };
 
   React.useEffect(() => {
-    const currentPath: BreadCrumbItem[] = [
+    const currentPath = [
       {
         name: "Privileges",
         url: "/privileges",
