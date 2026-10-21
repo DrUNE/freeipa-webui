@@ -261,6 +261,11 @@ export const api = createApi({
     "FullOverrideUser",
     "FullOverrideGroup",
     "FullAutomember",
+    "FullGpo",
+    "GpoList",
+    "FullChain",
+    "ChainList",
+    "Gpmaster",
   ],
   endpoints: (build) => ({
     simpleMutCommand: build.mutation<
